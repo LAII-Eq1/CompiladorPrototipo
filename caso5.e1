@@ -1,0 +1,35 @@
+###########################################
+#		CASO DE ESTUDIO 5	    	   #
+# 	IDENTIFICACIÓN DE СONSTANTES        #
+###########################################
+
+
+func sum ( int num1 , int num2 ) : int {
+	int suma ;
+	suma = num1 + num2 ;
+	return suma ;
+}
+func res ( int num1 , int num2 ) : int {
+	int resta ;
+	resta = num1 - num2 ;
+	return resta ;
+}
+func mult ( real num3 , real num4 ) : real {
+	real multi ;
+	multi = num3 * num2 ;
+	return multi ;
+}
+func div ( real num3 , real num4 ) : real {
+	real divi ;
+	divi = num3 * num4 ;
+	return divi ;
+}
+int num1 = 15 ;          //La constante 15 es válida como entero
+int num2 = 02 x 15u ;    //La constante 02x15c no es válida como entero
+real num3 = 15.02 ;      //La constante 15.02 es válida como decimal
+real num4 = 16,42 ;      //La constante 16,42 no es válida como decimal
+int suma = sum ( num1 , num2 ) ;
+int resta = res ( num1 , num2 ) ;
+real multi = mult ( num3 , num4 ) ;
+real divi = div ( num3 , num4 ) ;
+print ( suma , resta , multi , divi ) ;
