@@ -1,0 +1,37 @@
+#########################################
+#		   CASO DE ESTUDIO 3		 	#
+# IDENTIFICACIÓN DE PALABRAS RESERVADAS #
+#########################################
+
+string1 g = 89		// string1 sería considerado identificador 
+				// y no palabra reservada
+string num = 7.9		// En este caso string es considerado palabra reservada			
+int letr_a = "Casa(45)"	//int es considerado como palabra reservada 
+
+if ( g = 0 ) {
+	print "int g es igual a 0" ;		//Las palabras reservadas en el
+										//programa son string, int, for, println, print, read, for, func, if
+}
+
+for ( g in 1 -> 1 ) {
+	g = g-1
+}
+pritnln "nuevo valor de g" ; 
+read g ; 
+
+numeros ( g ) ;
+
+func numeros1 ( g ) : intt { 	//int no es considerado palabra reservada
+	println "Dame otro valor:" ;
+	read num ;
+	println "Dame mas valores:" ;
+	read num_1 ;
+	read $num2 ;
+	sum= num + g ; 
+	print sum ;
+}
+ 
+numeros ( g int x )
+
+print "DANKE" ;
+letra_a = letra_a + "lll" ;
