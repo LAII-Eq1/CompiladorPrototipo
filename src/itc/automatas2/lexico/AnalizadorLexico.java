@@ -40,6 +40,10 @@ public class AnalizadorLexico {
      */
     public boolean analizar(String ruta) {
         String token;
+        int ultimoTipo = Tipos.NONE;
+        boolean foundVar = false;
+        boolean foundFunc = false;
+        String lastIdentRef = null;
         boolean error = false;
         try {
             tok = new Tokenizador(ruta);
@@ -62,188 +66,252 @@ public class AnalizadorLexico {
                 // Se reconocen palabras reservadas y símbolos primero
                 switch (token) {
                     case "if":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_IF, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_IF, Tipos.NONE));
                         found = true;
                         break;
                     case "else":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_ELSE, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_ELSE, Tipos.NONE));
                         found = true;
                         break;
                     case "while":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_WHILE, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_WHILE, Tipos.NONE));
                         found = true;
                         break;
                     case "for":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_FOR, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_FOR, Tipos.NONE));
                         found = true;
                         break;
                     case "func":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_FUNC, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_FUNC, Tipos.NONE));
+                        foundFunc = true;
                         found = true;
                         break;
                     case "return":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_RETURN, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_RETURN, Tipos.NONE));
                         found = true;
                         break;
                     case "true":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_TRUE, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_TRUE, Tipos.NONE));
                         found = true;
                         break;
                     case "false":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_FALSE, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_FALSE, Tipos.NONE));
                         found = true;
                         break;
                     case "null":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_NULL, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_NULL, Tipos.NONE));
                         found = true;
                         break;
                     case "int":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_INT, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_INT, Tipos.NONE));
+                        ultimoTipo = Tipos.INT;
+                        foundFunc = false;
                         found = true;
                         break;
                     case "real":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_REAL, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_REAL, Tipos.NONE));
+                        ultimoTipo = Tipos.REAL;
+                        foundFunc = false;
                         found = true;
                         break;
                     case "bool":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_BOOL, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_BOOL, Tipos.NONE));
+                        ultimoTipo = Tipos.BOOL;
+                        foundFunc = false;
                         found = true;
                         break;
                     case "string":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_STRING, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_STRING, Tipos.NONE));
+                        ultimoTipo = Tipos.STR;
+                        foundFunc = false;
                         found = true;
                         break;
                     case "print":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_PRINT, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_PRINT, Tipos.NONE));
                         found = true;
                         break;
                     case "println":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_PRINTLN, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_PRINTLN, Tipos.NONE));
                         found = true;
                         break;
                     case "read":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_REAL, 0));
-                        found = true;
-                        break;
-                    case ":":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_COLON, 0));
-                        found = true;
-                        break;
-                    case ";":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_SEMICOLON, 0));
-                        found = true;
-                        break;
-                    case "(":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_LPAREN, 0));
-                        found = true;
-                        break;
-                    case ")":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_RPAREN, 0));
-                        found = true;
-                        break;
-                    case "{":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_LBRACE, 0));
-                        found = true;
-                        break;
-                    case "}":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_RBRACE, 0));
-                        found = true;
-                        break;
-                    case "[":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_LBRACKET, 0));
-                        found = true;
-                        break;
-                    case "]":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_RBRACKET, 0));
-                        found = true;
-                        break;
-                    case "<=":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_LTE, 0));
-                        found = true;
-                        break;
-                    case ">=":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_GTE, 0));
-                        found = true;
-                        break;
-                    case "!=":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_NE, 0));
-                        found = true;
-                        break;
-                    case "<":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_LT, 0));
-                        found = true;
-                        break;
-                    case ">":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_GT, 0));
-                        found = true;
-                        break;
-                    case "==":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_EQ, 0));
-                        found = true;
-                        break;
-                    case "=":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_ASSIGN, 0));
-                        found = true;
-                        break;
-                    case "--":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_DEC, 0));
-                        found = true;
-                        break;
-                    case "++":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_INC, 0));
-                        found = true;
-                        break;
-                    case "!":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_NOT, 0));
-                        found = true;
-                        break;
-                    case "+":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_PLUS, 0));
-                        found = true;
-                        break;
-                    case "-":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_MINUS, 0));
-                        found = true;
-                        break;
-                    case "*":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_STAR, 0));
-                        found = true;
-                        break;
-                    case "/":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_DIV, 0));
-                        found = true;
-                        break;
-                    case "->":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_RANGE, 0));
-                        found = true;
-                        break;
-                    case ",":
-                        tS.meter(token, new RegistroTS(token, Tokens.T_COMMA, 0));
+                        tS.meter(new RegistroTS(token, Tokens.T_REAL, Tipos.NONE));
                         found = true;
                         break;
                 }
+
+                //Símbolos
+                if (!found) {
+                    switch (token) {
+                        case ":":
+                            tS.meter(new RegistroTS(token, Tokens.T_COLON, Tipos.NONE));
+                            found = true;
+                            break;
+                        case ";":
+                            tS.meter(new RegistroTS(token, Tokens.T_SEMICOLON, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "(":
+                            tS.meter(new RegistroTS(token, Tokens.T_LPAREN, Tipos.NONE));
+                            found = true;
+                            break;
+                        case ")":
+                            tS.meter(new RegistroTS(token, Tokens.T_RPAREN, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "{":
+                            tS.meter(new RegistroTS(token, Tokens.T_LBRACE, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "}":
+                            tS.meter(new RegistroTS(token, Tokens.T_RBRACE, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "[":
+                            tS.meter(new RegistroTS(token, Tokens.T_LBRACKET, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "]":
+                            tS.meter(new RegistroTS(token, Tokens.T_RBRACKET, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "<=":
+                            tS.meter(new RegistroTS(token, Tokens.T_LTE, Tipos.NONE));
+                            found = true;
+                            break;
+                        case ">=":
+                            tS.meter(new RegistroTS(token, Tokens.T_GTE, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "!=":
+                            tS.meter(new RegistroTS(token, Tokens.T_NE, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "<":
+                            tS.meter(new RegistroTS(token, Tokens.T_LT, Tipos.NONE));
+                            found = true;
+                            break;
+                        case ">":
+                            tS.meter(new RegistroTS(token, Tokens.T_GT, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "==":
+                            tS.meter(new RegistroTS(token, Tokens.T_EQ, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "=":
+                            tS.meter(new RegistroTS(token, Tokens.T_ASSIGN, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "--":
+                            tS.meter(new RegistroTS(token, Tokens.T_DEC, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "++":
+                            tS.meter(new RegistroTS(token, Tokens.T_INC, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "!":
+                            tS.meter(new RegistroTS(token, Tokens.T_NOT, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "+":
+                            tS.meter(new RegistroTS(token, Tokens.T_PLUS, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "-":
+                            tS.meter(new RegistroTS(token, Tokens.T_MINUS, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "*":
+                            tS.meter(new RegistroTS(token, Tokens.T_STAR, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "/":
+                            tS.meter(new RegistroTS(token, Tokens.T_DIV, Tipos.NONE));
+                            found = true;
+                            break;
+                        case "->":
+                            tS.meter(new RegistroTS(token, Tokens.T_RANGE, Tipos.NONE));
+                            found = true;
+                            break;
+                        case ",":
+                            tS.meter(new RegistroTS(token, Tokens.T_COMMA, Tipos.NONE));
+                            found = true;
+                            break;
+                    }
+
+                    if (foundVar && !token.equals("=")) {
+                        foundVar = false;
+                    }
+                }
+
 
                 // Se prosigue con la evaluacion en los autómatas
                 if (!found) {
                     for (AutomataToken a : automatas) {
                         if (!found && a.ejecutar(token)) {
+                            RegistroTS reg;
                             switch (a.getTokenId()) {
+                                // Identificador
                                 case Tokens.T_VAR:
-                                    if (!tS.contiene(token)) {
-                                        tS.meter(token, new RegistroTS(token, Tokens.T_VAR, 0));
+                                    if (!foundFunc) {
+                                        if (!tS.contiene(token)) {
+                                            reg = new RegistroTS(token, Tokens.T_VAR, ultimoTipo);
+                                            switch (ultimoTipo) {
+                                                case Tipos.INT:
+                                                    reg.VAL = "0";
+                                                    break;
+                                                case Tipos.REAL:
+                                                    reg.VAL = "0.0";
+                                                    break;
+                                                case Tipos.BOOL:
+                                                    reg.VAL = "false";
+                                                    break;
+                                            }
+                                            ultimoTipo = Tipos.NONE;
+                                            foundVar = true;
+                                            lastIdentRef = reg.VAL;
+                                            tS.meter(reg);
+                                        } else {
+                                            RegistroTS prev = tS.get(token);
+                                            reg = new RegistroTS(token, Tokens.T_VAR, Tipos.REF, prev.ID);
+                                            tS.meter(reg);
+                                            lastIdentRef = prev.ID;
+                                        }
+                                    } else {
+                                        tS.meter(new RegistroTS(token, Tokens.T_FUN, Tipos.NONE));
+                                        foundFunc = false;
                                     }
                                     found = true;
                                     break;
+
+                                // Constantes
                                 case Tokens.T_STR_CONST:
-                                    tS.meter(token, new RegistroTS(token, Tokens.T_STR_CONST, 0));
+                                    reg = new RegistroTS(token, Tokens.T_STR_CONST, Tipos.NONE);
+                                    if (foundVar) {
+                                        tS.getByID(lastIdentRef).VAL = token.replaceAll("\"", "");
+                                        foundVar = false;
+                                    }
+                                    tS.meter(reg);
                                     found = true;
                                     break;
                                 case Tokens.T_INT_CONST:
-                                    tS.meter(token, new RegistroTS(token, Tokens.T_INT_CONST, 0));
+                                    reg = new RegistroTS(token, Tokens.T_STR_CONST, Tipos.NONE);
+                                    if (foundVar) {
+                                        tS.getByID(lastIdentRef).VAL = token;
+                                        foundVar = false;
+                                    }
+                                    tS.meter(reg);
                                     found = true;
                                     break;
                                 case Tokens.T_REAL_CONST:
-                                    tS.meter(token, new RegistroTS(token, Tokens.T_REAL_CONST, 0));
+                                    reg = new RegistroTS(token, Tokens.T_STR_CONST, Tipos.NONE);
+                                    if (foundVar) {
+                                        tS.getByID(lastIdentRef).VAL = token;
+                                        foundVar = false;
+                                    }
+                                    tS.meter(reg);
                                     found = true;
                                     break;
                             }
@@ -303,15 +371,15 @@ public class AnalizadorLexico {
      */
     public void imprimirSimbolos() {
         if (tS.size() > 0) {
-            System.out.println("------------------------------------------------------------");
-            System.out.println("|                    TABLA DE SÍMBOLOS                     |");
-            System.out.println("------------------------------------------------------------");
-            System.out.printf("| %-30s | %8s | %12s |\n", "NOMBRE O LEXEMA", "TOKEN ID", "TIPO DE DATO");
-            System.out.println("------------------------------------------------------------");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------");
+            System.out.println("|                                                 TABLA DE SÍMBOLOS                                                  |");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------");
+            System.out.printf("| %24s | %-30s | %-12s | %-12s | %24s |\n", "ID", "NOMBRE O LEXEMA", "TOKEN ID", "TIPO DE DATO", "VALOR");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------");
             for (RegistroTS reg : tS.registros()) {
-                System.out.printf("| %-30s | %8d | %12d |\n", reg.NOMBRE, reg.TOKEN_ID, reg.TIPO);
+                System.out.printf("| %24s | %-30s | %-12s | %-12s | %24s |\n", reg.ID, reg.NOMBRE, Tokens.nombres[reg.TOKEN_ID], Tipos.nombres[reg.TIPO], reg.VAL);
             }
-            System.out.println("------------------------------------------------------------");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------");
         } else {
             System.out.println("No se encontraron símbolos en el código");
         }
