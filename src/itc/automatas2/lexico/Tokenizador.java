@@ -61,18 +61,20 @@ public class Tokenizador {
             if (linea == null)
                 return false;
 
-            boolean flag = false;
+            //Bandera para saber si se está leyendo una cadena
+            boolean string = false;
             StringBuilder sb = new StringBuilder();
             char[] str = linea.toCharArray();
             for (int i = 0; i < str.length; i++) {
                 if (i == str.length - 1) {   //El último caracter
                     //Si no se está leyendo un string y no es delimitador, o si se está leyendo un string
-                    if ((!flag && !Character.toString(str[i]).matches("[ \t]")) || flag)
+                    if ((!string && !Character.toString(str[i]).matches("[ \t]")) || string)
                         sb.append(str[i]);
                     if (sb.length() > 0)
                         tokens.add(sb.toString());
-                } else if (!flag) { //No se está leyendo un string
+                } else if (!string) { //No se está leyendo un string
                     switch (str[i]) {
+                        //Delimitadores
                         case ' ':
                         case '\t':
                             if (sb.length() > 0) {
@@ -80,18 +82,27 @@ public class Tokenizador {
                                 sb.setLength(0);
                             }
                             break;
+                        case ';':
+                            if (sb.length() > 0) {
+                                tokens.add(sb.toString());
+                                sb.setLength(0);
+                            }
+                            tokens.add(Character.toString(str[i]));
+                            break;
+                        //Cadena
                         case '"':
-                            flag = true;
+                            string = true;
                             sb.append(str[i]);
                             break;
+                        //Cualquier símbolo
                         default:
                             sb.append(str[i]);
                             break;
                     }
-                } else if (flag) {  //Se está leyendo un string
+                } else {  //Se está leyendo una cadena
                     sb.append(str[i]);
-                    if (str[i] == '"') {
-                        flag = false;
+                    if (str[i] == '"') {    //Si la cadena termina, se completa el token
+                        string = false;
                         tokens.add(sb.toString());
                         sb.setLength(0);
                     }

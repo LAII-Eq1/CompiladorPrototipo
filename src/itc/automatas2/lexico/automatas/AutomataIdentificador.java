@@ -34,7 +34,7 @@ public class AutomataIdentificador extends AutomataToken {
         if (Character.toString(car[cont]).matches("[A-Za-z0-9_$]")) {
             return this.q1(cont + 1, car);
         }
-        return true;
+        return false;
 
     }
 

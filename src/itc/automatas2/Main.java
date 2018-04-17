@@ -3,7 +3,7 @@ package itc.automatas2;
 import itc.automatas2.lexico.AnalizadorLexico;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         if (args.length == 0) {
             System.err.println("ERROR: Proporcione la ruta del archivo a analizar.");
             System.exit(1);
@@ -15,6 +15,7 @@ public class Main {
         else
             System.err.println("El analizador declaró el código como inválido");
         a.imprimirErrores();
+        Thread.sleep(100);
         a.imprimirSimbolos();
     }
 }
