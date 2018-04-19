@@ -13,10 +13,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class AnalizadorLexico {
-    private Tokenizador tok;
-    private TablaSimbolos tS;
+    public TablaSimbolos tS;
     private PilaErrores pErr;
     private ArrayList<AutomataToken> automatas;
+    private AutomataReservadas automataReservadas;
 
     /**
      * Constructor de la clase
@@ -27,10 +27,9 @@ public class AnalizadorLexico {
         automatas.add(new AutomataDecimal());
         automatas.add(new AutomataNumero());
         automatas.add(new AutomataIdentificador());
-        tS = new TablaSimbolos();
+        automataReservadas = new AutomataReservadas();
         pErr = new PilaErrores();
     }
-
 
     /**
      * Analiza un archivo de código fuente.
@@ -39,14 +38,17 @@ public class AnalizadorLexico {
      * @return <code>true</code> si se aceptó el código, <code>false</code> si fue rechazado.
      */
     public boolean analizar(String ruta) {
+        tS = new TablaSimbolos();
         String token;
         int ultimoTipo = Tipos.NONE;
         boolean foundVar = false;
+        boolean foundAssign = false;
         boolean foundFunc = false;
+        boolean noValFound = false;
         String lastIdentRef = null;
         boolean error = false;
         try {
-            tok = new Tokenizador(ruta);
+            Tokenizador tok = new Tokenizador(ruta);
             while ((token = tok.siguienteToken()) != null) {
                 // Bandera para saber si el token ya fue reconocido
                 boolean found = false;
@@ -63,186 +65,203 @@ public class AnalizadorLexico {
                     continue;
                 }
 
-                // Se reconocen palabras reservadas y símbolos primero
-                switch (token) {
-                    case "if":
-                        tS.meter(new RegistroTS(token, Tokens.T_IF, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "else":
-                        tS.meter(new RegistroTS(token, Tokens.T_ELSE, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "while":
-                        tS.meter(new RegistroTS(token, Tokens.T_WHILE, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "for":
-                        tS.meter(new RegistroTS(token, Tokens.T_FOR, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "func":
-                        tS.meter(new RegistroTS(token, Tokens.T_FUNC, Tipos.NONE));
-                        foundFunc = true;
-                        found = true;
-                        break;
-                    case "return":
-                        tS.meter(new RegistroTS(token, Tokens.T_RETURN, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "true":
-                        tS.meter(new RegistroTS(token, Tokens.T_TRUE, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "false":
-                        tS.meter(new RegistroTS(token, Tokens.T_FALSE, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "null":
-                        tS.meter(new RegistroTS(token, Tokens.T_NULL, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "int":
-                        tS.meter(new RegistroTS(token, Tokens.T_INT, Tipos.NONE));
-                        ultimoTipo = Tipos.INT;
-                        foundFunc = false;
-                        found = true;
-                        break;
-                    case "real":
-                        tS.meter(new RegistroTS(token, Tokens.T_REAL, Tipos.NONE));
-                        ultimoTipo = Tipos.REAL;
-                        foundFunc = false;
-                        found = true;
-                        break;
-                    case "bool":
-                        tS.meter(new RegistroTS(token, Tokens.T_BOOL, Tipos.NONE));
-                        ultimoTipo = Tipos.BOOL;
-                        foundFunc = false;
-                        found = true;
-                        break;
-                    case "string":
-                        tS.meter(new RegistroTS(token, Tokens.T_STRING, Tipos.NONE));
-                        ultimoTipo = Tipos.STR;
-                        foundFunc = false;
-                        found = true;
-                        break;
-                    case "print":
-                        tS.meter(new RegistroTS(token, Tokens.T_PRINT, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "println":
-                        tS.meter(new RegistroTS(token, Tokens.T_PRINTLN, Tipos.NONE));
-                        found = true;
-                        break;
-                    case "read":
-                        tS.meter(new RegistroTS(token, Tokens.T_REAL, Tipos.NONE));
-                        found = true;
-                        break;
+                // Se reconocen palabras reservadas primero
+                if (automataReservadas.ejecutar(token)) {
+                    switch (token) {
+                        case "if":
+                            tS.meter(new RegistroTS(token, Tokens.T_IF, Tipos.NONE, tok.archivo.getNoLinea()));
+                            found = true;
+                            break;
+                        case "else":
+                            tS.meter(new RegistroTS(token, Tokens.T_ELSE, Tipos.NONE, tok.archivo.getNoLinea()));
+                            found = true;
+                            break;
+                        case "while":
+                            tS.meter(new RegistroTS(token, Tokens.T_WHILE, Tipos.NONE, tok.archivo.getNoLinea()));
+                            found = true;
+                            break;
+                        case "for":
+                            tS.meter(new RegistroTS(token, Tokens.T_FOR, Tipos.NONE, tok.archivo.getNoLinea()));
+                            found = true;
+                            break;
+                        case "func":
+                            tS.meter(new RegistroTS(token, Tokens.T_FUNC, Tipos.NONE, tok.archivo.getNoLinea()));
+                            foundFunc = true;
+                            found = true;
+                            break;
+                        case "return":
+                            tS.meter(new RegistroTS(token, Tokens.T_RETURN, Tipos.NONE, tok.archivo.getNoLinea()));
+                            found = true;
+                            break;
+                        case "true":
+                            tS.meter(new RegistroTS(token, Tokens.T_TRUE, Tipos.NONE, tok.archivo.getNoLinea()));
+                            if (foundVar && foundAssign) {
+                                tS.getByID(lastIdentRef).VAL = token;
+                                foundVar = false;
+                                foundAssign = false;
+                            }
+                            found = true;
+                            break;
+                        case "false":
+                            tS.meter(new RegistroTS(token, Tokens.T_FALSE, Tipos.NONE, tok.archivo.getNoLinea()));
+                            if (foundVar && foundAssign) {
+                                tS.getByID(lastIdentRef).VAL = token;
+                                foundVar = false;
+                                foundAssign = false;
+                            }
+                            found = true;
+                            break;
+                        case "null":
+                            tS.meter(new RegistroTS(token, Tokens.T_NULL, Tipos.NONE, tok.archivo.getNoLinea()));
+                            found = true;
+                            break;
+                        case "int":
+                            tS.meter(new RegistroTS(token, Tokens.T_INT, Tipos.NONE, tok.archivo.getNoLinea()));
+                            ultimoTipo = Tipos.INT;
+                            foundFunc = false;
+                            found = true;
+                            break;
+                        case "real":
+                            tS.meter(new RegistroTS(token, Tokens.T_REAL, Tipos.NONE, tok.archivo.getNoLinea()));
+                            ultimoTipo = Tipos.REAL;
+                            foundFunc = false;
+                            found = true;
+                            break;
+                        case "bool":
+                            tS.meter(new RegistroTS(token, Tokens.T_BOOL, Tipos.NONE, tok.archivo.getNoLinea()));
+                            ultimoTipo = Tipos.BOOL;
+                            foundFunc = false;
+                            found = true;
+                            break;
+                        case "string":
+                            tS.meter(new RegistroTS(token, Tokens.T_STRING, Tipos.NONE, tok.archivo.getNoLinea()));
+                            ultimoTipo = Tipos.STR;
+                            foundFunc = false;
+                            found = true;
+                            break;
+                        case "print":
+                            tS.meter(new RegistroTS(token, Tokens.T_PRINT, Tipos.NONE, tok.archivo.getNoLinea()));
+                            found = true;
+                            break;
+                        case "println":
+                            tS.meter(new RegistroTS(token, Tokens.T_PRINTLN, Tipos.NONE, tok.archivo.getNoLinea()));
+                            found = true;
+                            break;
+                        case "read":
+                            tS.meter(new RegistroTS(token, Tokens.T_READ, Tipos.NONE, tok.archivo.getNoLinea()));
+                            found = true;
+                            break;
+                    }
                 }
 
                 //Símbolos
                 if (!found) {
                     switch (token) {
                         case ":":
-                            tS.meter(new RegistroTS(token, Tokens.T_COLON, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_COLON, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case ";":
-                            tS.meter(new RegistroTS(token, Tokens.T_SEMICOLON, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_SEMICOLON, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "(":
-                            tS.meter(new RegistroTS(token, Tokens.T_LPAREN, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_LPAREN, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case ")":
-                            tS.meter(new RegistroTS(token, Tokens.T_RPAREN, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_RPAREN, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "{":
-                            tS.meter(new RegistroTS(token, Tokens.T_LBRACE, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_LBRACE, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "}":
-                            tS.meter(new RegistroTS(token, Tokens.T_RBRACE, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_RBRACE, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "[":
-                            tS.meter(new RegistroTS(token, Tokens.T_LBRACKET, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_LBRACKET, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "]":
-                            tS.meter(new RegistroTS(token, Tokens.T_RBRACKET, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_RBRACKET, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "<=":
-                            tS.meter(new RegistroTS(token, Tokens.T_LTE, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_LTE, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case ">=":
-                            tS.meter(new RegistroTS(token, Tokens.T_GTE, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_GTE, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "!=":
-                            tS.meter(new RegistroTS(token, Tokens.T_NE, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_NE, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "<":
-                            tS.meter(new RegistroTS(token, Tokens.T_LT, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_LT, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case ">":
-                            tS.meter(new RegistroTS(token, Tokens.T_GT, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_GT, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "==":
-                            tS.meter(new RegistroTS(token, Tokens.T_EQ, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_EQ, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "=":
-                            tS.meter(new RegistroTS(token, Tokens.T_ASSIGN, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_ASSIGN, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "--":
-                            tS.meter(new RegistroTS(token, Tokens.T_DEC, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_DEC, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "++":
-                            tS.meter(new RegistroTS(token, Tokens.T_INC, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_INC, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "!":
-                            tS.meter(new RegistroTS(token, Tokens.T_NOT, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_NOT, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "+":
-                            tS.meter(new RegistroTS(token, Tokens.T_PLUS, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_PLUS, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "-":
-                            tS.meter(new RegistroTS(token, Tokens.T_MINUS, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_MINUS, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "*":
-                            tS.meter(new RegistroTS(token, Tokens.T_STAR, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_STAR, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "/":
-                            tS.meter(new RegistroTS(token, Tokens.T_DIV, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_DIV, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case "->":
-                            tS.meter(new RegistroTS(token, Tokens.T_RANGE, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_RANGE, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                         case ",":
-                            tS.meter(new RegistroTS(token, Tokens.T_COMMA, Tipos.NONE));
+                            tS.meter(new RegistroTS(token, Tokens.T_COMMA, Tipos.NONE, tok.archivo.getNoLinea()));
                             found = true;
                             break;
                     }
 
-                    if (foundVar && !token.equals("=")) {
+                    if (!foundAssign && foundVar && token.equals("=")) {
+                        foundAssign = true;
+                    }
+                    if (noValFound) {
                         foundVar = false;
+                        foundAssign = false;
+                        noValFound = false;
                     }
                 }
 
@@ -257,7 +276,7 @@ public class AnalizadorLexico {
                                 case Tokens.T_VAR:
                                     if (!foundFunc) {
                                         if (!tS.contiene(token)) {
-                                            reg = new RegistroTS(token, Tokens.T_VAR, ultimoTipo);
+                                            reg = new RegistroTS(token, Tokens.T_VAR, ultimoTipo, tok.archivo.getNoLinea());
                                             switch (ultimoTipo) {
                                                 case Tipos.INT:
                                                     reg.VAL = "0";
@@ -271,16 +290,16 @@ public class AnalizadorLexico {
                                             }
                                             ultimoTipo = Tipos.NONE;
                                             foundVar = true;
-                                            lastIdentRef = reg.VAL;
+                                            lastIdentRef = reg.ID;
                                             tS.meter(reg);
                                         } else {
                                             RegistroTS prev = tS.get(token);
-                                            reg = new RegistroTS(token, Tokens.T_VAR, Tipos.REF, prev.ID);
+                                            reg = new RegistroTS(token, Tokens.T_VAR, Tipos.REF, tok.archivo.getNoLinea(), prev.ID);
                                             tS.meter(reg);
                                             lastIdentRef = prev.ID;
                                         }
                                     } else {
-                                        tS.meter(new RegistroTS(token, Tokens.T_FUN, Tipos.NONE));
+                                        tS.meter(new RegistroTS(token, Tokens.T_FUN, Tipos.NONE, tok.archivo.getNoLinea()));
                                         foundFunc = false;
                                     }
                                     found = true;
@@ -288,28 +307,31 @@ public class AnalizadorLexico {
 
                                 // Constantes
                                 case Tokens.T_STR_CONST:
-                                    reg = new RegistroTS(token, Tokens.T_STR_CONST, Tipos.NONE);
-                                    if (foundVar) {
+                                    reg = new RegistroTS(token, Tokens.T_STR_CONST, Tipos.NONE, tok.archivo.getNoLinea());
+                                    if (foundVar && foundAssign) {
                                         tS.getByID(lastIdentRef).VAL = token.replaceAll("\"", "");
                                         foundVar = false;
+                                        foundAssign = false;
                                     }
                                     tS.meter(reg);
                                     found = true;
                                     break;
                                 case Tokens.T_INT_CONST:
-                                    reg = new RegistroTS(token, Tokens.T_STR_CONST, Tipos.NONE);
-                                    if (foundVar) {
+                                    reg = new RegistroTS(token, Tokens.T_INT_CONST, Tipos.NONE, tok.archivo.getNoLinea());
+                                    if (foundVar && foundAssign) {
                                         tS.getByID(lastIdentRef).VAL = token;
                                         foundVar = false;
+                                        foundAssign = false;
                                     }
                                     tS.meter(reg);
                                     found = true;
                                     break;
                                 case Tokens.T_REAL_CONST:
-                                    reg = new RegistroTS(token, Tokens.T_STR_CONST, Tipos.NONE);
-                                    if (foundVar) {
+                                    reg = new RegistroTS(token, Tokens.T_REAL_CONST, Tipos.NONE, tok.archivo.getNoLinea());
+                                    if (foundVar && foundAssign) {
                                         tS.getByID(lastIdentRef).VAL = token;
                                         foundVar = false;
+                                        foundAssign = false;
                                     }
                                     tS.meter(reg);
                                     found = true;
@@ -318,6 +340,7 @@ public class AnalizadorLexico {
                         }
                     }
                 }
+                noValFound = !(foundVar || foundAssign);
                 // Si el token no fue reconocido, se marca error.
                 if (!found) {
                     pErr.meter(new RegistroErr(110, tok.archivo.getNoLinea(), token));
@@ -370,7 +393,7 @@ public class AnalizadorLexico {
      * Imprime la tabla de símbolos en la salida estándar.
      */
     public void imprimirSimbolos() {
-        if (tS.size() > 0) {
+        if (tS != null && tS.size() > 0) {
             System.out.println("----------------------------------------------------------------------------------------------------------------------");
             System.out.println("|                                                 TABLA DE SÍMBOLOS                                                  |");
             System.out.println("----------------------------------------------------------------------------------------------------------------------");

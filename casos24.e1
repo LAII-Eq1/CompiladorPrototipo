@@ -4,8 +4,8 @@
 #  CARACTERES NO INCLUIDOS EN EL ALFABETO  #
 ############################################
 
-string Geschäft = null ;		// Dentro de los caracteres del identificador 
-  	// ä es inválido 
+string Geschäft = null ;    // Dentro de los caracteres del identificador 
+    // ä es inválido 
 string nombre = null ; 
 int edad = 0 ;
 int opcion = 0 ;
@@ -13,7 +13,7 @@ double peso = 0 ;
 
 while ( opcion != 1 ) {
 
-	println "Bienvenido" ;
+  println "Bienvenido" ;
 println "Ingrese el nombre" ;
 read nombre ;
 println "Ingrese el nombre del negocio" ;
@@ -25,11 +25,11 @@ read peso ;
 
 print "¿Fueron correctos los datos ingresados?\n1.-Si\n2.-No" ;
 if ( opcion == 1 ) {
-		print "Los siguientes datos fueron los siguientes :" ;
-		print "Nombre : " + nombre ;
-		print "Negocio : " + Geschäft ;
-		print "Edad : " + edad ;
-		print "Peso : " + peso ;
+    print "Los siguientes datos fueron los siguientes :" ;
+    print "Nombre : " + nombre ;
+    print "Negocio : " + Geschäft ;
+    print "Edad : " + edad ;
+    print "Peso : " + peso ;
 }
 }
-println "спасиба" ;			// Gracias en ruso, son caracteres inválidos
+println "спасиба" ;      // Gracias en ruso, son caracteres inválidos
