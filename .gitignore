@@ -102,3 +102,7 @@ nbactions.xml
 
 # End of https://www.gitignore.io/api/java,netbeans,intellij
 target/
+
+\.idea/
+
+nbproject/
