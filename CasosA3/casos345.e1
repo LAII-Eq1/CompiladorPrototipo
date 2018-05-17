@@ -1,0 +1,52 @@
+######################################################################
+#                       CASO DE ESTUDIO 3, 4 y 5                     
+#                       Mal cierre de paréntesis                     #
+#                   Mala estructuración de sentencias                #
+#                       Estructuras no definidas                     #
+######################################################################
+
+func sum (int num1 , int num2) : int {   // La estructura del método es la
+                                           //definida con base en nuestra
+                                           //gramática.  
+	int suma;
+	suma = num1 + num2;
+	return suma;                     //return esta estructurado correctamente 
+}
+
+func res (int num1  int num2 int) : int { //Esta estructura no cumple con la   
+                                            //gramática por lo que marcaria error   
+                                            //ya que hace falta las comas y falta
+                                            //una variable. 
+	int resta;
+	resta = num1 - num2;
+	return resta num1;       //Este return no esta estructurado correctamente
+                                //por lo que enviaría un error.
+}
+
+if(suma>resta){                                        //La estructura de este if    
+                                                       //es la correcta. 
+         print ("La suma es mayor que la resta"); //Ningún print lleva paréntesis
+}else{
+         print ("La resta es mayor que la suma");
+}
+
+if(suma>resta {                                        //La estructura de este if 
+                                                      //es incorrecta por lo del
+         print ("La suma es mayor que la resta");     //paréntesis y el else x
+         print ("Esto es error");
+}else x{
+         print ("La resta es mayor que la suma");
+         print ("Esto es un error");
+}
+ el perro es un animal;                       //Es una estructura no definida
+                                                 //el lenguaje
+
+int num1 = 15;          
+int num2  02 x 15;   //Enviara un error semantico    
+real num3 = 15.02;      
+real num4 >= 16,42;     
+int suma = sum (num1 , num2);
+int resta = res (num1 , num2);
+real multi = mult (num3  num4);   //Enviara un error semántico 
+real divi = div (num3 , num4);
+print (suma , resta , multi , divi);

@@ -1,5 +1,9 @@
 package itc.automatas2.estructuras;
 
+import itc.automatas2.lexico.Tokens;
+import itc.automatas2.misc.BaseErrores;
+import itc.automatas2.misc.Error;
+
 import java.util.ArrayDeque;
 
 /**
@@ -33,5 +37,49 @@ public class PilaErrores {
      */
     public static int size() {
         return pila.size();
+    }
+
+    public static void imprimirErrores() {
+        if (pila.size() > 0)
+            while (PilaErrores.size() > 0) {
+                RegistroErr reg = PilaErrores.sacar();
+                Error err = BaseErrores.getError(reg.ERR_ID);
+                switch (reg.ERR_ID) {
+                    //De sistema
+                    case 10:
+                        err.setReason(String.format("(RUTA: %s)", reg.LEXEMA));
+                        break;
+                    case 11:
+                        err.setReason(String.format("(RUTA: %s)", reg.LEXEMA));
+                        break;
+                    case 12:
+                        err.setReason("Verifique que todas las llaves estén cerradas o que la última sentencia termine en \";\".");
+                        break;
+                    //Léxicos
+                    case 110:
+                        err.setReason(String.format("No se pudo identificar el token \"%s\" en la línea %d", reg.LEXEMA, reg.LINEA_N));
+                        break;
+                    case 120:
+                        err.setReason(String.format("El token '%s' en la línea %d contiene símbolos no reconocibles (fuera del código ASCII). ", reg.LEXEMA, reg.LINEA_N));
+                        break;
+                    //Sintacticos
+                    case 210:
+                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
+                        break;
+                    case 220:
+                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
+                        break;
+                    case 230:
+                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
+                        break;
+                    case 240:
+                        err.setReason(String.format("No se esperaba el token %s ('%s') cerca de la línea %d.", Tokens.nombres[reg.TOKEN_ID], reg.LEXEMA, reg.LINEA_N));
+                        break;
+                    case 250:
+                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
+                        break;
+                }
+                System.err.println(err);
+            }
     }
 }

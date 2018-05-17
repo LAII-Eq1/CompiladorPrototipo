@@ -3,6 +3,7 @@ package itc.automatas2.sintactico;
 import itc.automatas2.estructuras.*;
 import itc.automatas2.lexico.Tokens;
 
+
 public class Estructuras {
 
     public static int cont;
@@ -10,10 +11,10 @@ public class Estructuras {
     /**
      * Analiza la estructura sintáctica del if y regresa su árbol
      *
-     * @param i el índice del primer token en la tabla
+     * @param i  el índice del primer token en la tabla
      * @param ts la tabla de símbolos
      * @return el árbol sintáctico de la estructura
-     * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
+     * @throws SecuenciaIncorrectaException    cuando se encuentra un token inesperado en la secuencia.
      * @throws EstructuraNoReconocidaException cuando no se puede identificar una sentencia o estructura dentro de un bloque.
      */
     public static ArbolSintactico r_if(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException, EstructuraNoReconocidaException {
@@ -73,6 +74,14 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica del else y regresa su árbol
+     *
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException    cuando se encuentra un token inesperado en la secuencia.
+     * @throws EstructuraNoReconocidaException cuando no se puede identificar una sentencia o estructura dentro de un bloque.
+     */
     private static ArbolSintactico r_else(TablaSimbolos ts) throws SecuenciaIncorrectaException, EstructuraNoReconocidaException {
         RegistroTS reg = ts.get(cont);
         if (reg.TOKEN_ID == Tokens.T_IF) {
@@ -80,9 +89,17 @@ public class Estructuras {
         } else {
             return r_bloque(cont, ts);
         }
-
     }
 
+    /**
+     * Analiza la estructura sintáctica del bloque y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException    cuando se encuentra un token inesperado en la secuencia.
+     * @throws EstructuraNoReconocidaException cuando no se puede identificar una sentencia o estructura dentro de un bloque.
+     */
     public static ArbolSintactico r_bloque(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException, EstructuraNoReconocidaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -158,6 +175,14 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica del call y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
+     */
     public static ArbolSintactico r_call(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -201,6 +226,15 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica del metodo y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException    cuando se encuentra un token inesperado en la secuencia.
+     * @throws EstructuraNoReconocidaException cuando no se puede identificar una sentencia o estructura dentro de un bloque.
+     */
     public static ArbolSintactico r_metodo(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException, EstructuraNoReconocidaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -279,6 +313,14 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica del retorno y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
+     */
     public static ArbolSintactico r_retorno(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -324,6 +366,15 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica del for y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException    cuando se encuentra un token inesperado en la secuencia.
+     * @throws EstructuraNoReconocidaException cuando no se puede identificar una sentencia o estructura dentro de un bloque.
+     */
     public static ArbolSintactico r_for(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException, EstructuraNoReconocidaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -423,6 +474,15 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica del while y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException    cuando se encuentra un token inesperado en la secuencia.
+     * @throws EstructuraNoReconocidaException cuando no se puede identificar una sentencia o estructura dentro de un bloque.
+     */
     public static ArbolSintactico r_while(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException, EstructuraNoReconocidaException {
 
         cont = i;
@@ -469,6 +529,14 @@ public class Estructuras {
 
     }
 
+    /**
+     * Analiza la estructura sintáctica de la lectura y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
+     */
     public static ArbolSintactico r_lectura(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -507,6 +575,14 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica de la impresion y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
+     */
     public static ArbolSintactico r_impresion(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -551,6 +627,14 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica de los parametros y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
+     */
     public static ArbolSintactico r_params(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -590,6 +674,14 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica de los argumentos y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
+     */
     public static ArbolSintactico r_args(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -640,6 +732,14 @@ public class Estructuras {
 
     }
 
+    /**
+     * Analiza la estructura sintáctica de la asignacion y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
+     */
     public static ArbolSintactico r_asignacion(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -675,7 +775,15 @@ public class Estructuras {
         }
 
         reg = ts.get(++cont);
-        if (reg.TOKEN_ID != Tokens.T_ASSIGN) {
+
+        if (reg.TOKEN_ID == Tokens.T_SEMICOLON) {
+            actual = new NodoArbol();
+            actual.TOKEN_ID = Tokens.T_SEMICOLON;
+            actual.REF = reg.ID;
+            a.meter(a.raiz, actual);
+            cont++;
+            return a;
+        } else if (reg.TOKEN_ID != Tokens.T_ASSIGN) {
             PilaErrores.meter(new RegistroErr(240, reg.LINE, reg.NOMBRE, reg.TOKEN_ID));
             throw new SecuenciaIncorrectaException();
         } else {
@@ -712,6 +820,8 @@ public class Estructuras {
                     case Tokens.T_REAL_CONST:
                     case Tokens.T_BOOL_CONST:
                     case Tokens.T_STR_CONST:
+                    case Tokens.T_TRUE:
+                    case Tokens.T_FALSE:
                     case Tokens.T_VAR:
                         actual = new NodoArbol();
                         actual.TOKEN_ID = reg.TOKEN_ID;
@@ -739,6 +849,15 @@ public class Estructuras {
 
     }
 
+    /**
+     * Analiza la estructura sintáctica de la exrasion relacional y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException    cuando se encuentra un token inesperado en la secuencia.
+     * @throws EstructuraNoReconocidaException cuando no se puede identificar una sentencia o estructura dentro de un bloque.
+     */
     public static ArbolSintactico r_expr_rel(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -802,6 +921,14 @@ public class Estructuras {
         return a;
     }
 
+    /**
+     * Analiza la estructura sintáctica de la expresion aritmetica y regresa su árbol
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
+     */
     public static ArbolSintactico r_expr_aritm(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
@@ -863,6 +990,16 @@ public class Estructuras {
         return a;
     }
 
+
+    /**
+     * Obtiene la regla de produccion a la que pertenece, con base en el primer token
+     *
+     * @param i  el índice del primer token en la tabla
+     * @param ts la tabla de símbolos
+     * @return el árbol sintáctico de la estructura
+     * @throws SecuenciaIncorrectaException    cuando se encuentra un token inesperado en la secuencia.
+     * @throws EstructuraNoReconocidaException cuando no se puede identificar una sentencia o estructura dentro de un bloque.
+     */
     public static int ObtenerReglaProd(int i, TablaSimbolos ts) throws EstructuraNoReconocidaException {
         RegistroTS reg;
         cont = i;

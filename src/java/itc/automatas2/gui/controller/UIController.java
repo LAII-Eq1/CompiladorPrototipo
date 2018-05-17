@@ -1,5 +1,6 @@
 package itc.automatas2.gui.controller;
 
+import itc.automatas2.estructuras.PilaErrores;
 import itc.automatas2.gui.lib.Util;
 import itc.automatas2.gui.model.ArchivoModel;
 import itc.automatas2.gui.view.MainFrame;
@@ -35,12 +36,14 @@ public class UIController {
     private AnalizadorLexico al;
     private AnalizadorSintactico as;
 
+
     /**
      * Constructor de la clase.
      * Muestra la vista automáticamente.
      */
     public UIController() {
         this.frm = new MainFrame();
+        this.C_DEFAULT = frm.getBtnLex().getBackground();
         this.dlgTable = new TablaSimbolosDialog();
         this.fc = new JFileChooser();
         this.al = new AnalizadorLexico();
@@ -81,7 +84,17 @@ public class UIController {
                             if ((e.getModifiers() & ActionEvent.SHIFT_MASK) > 0)
                                 all();
                             else
-                                lex();
+                                lex(true);
+                        }
+                        break;
+                    case KeyEvent.VK_F6:
+                        if (frm.getBtnSyn().isEnabled()) {
+                            syn(true);
+                        }
+                        break;
+                    case KeyEvent.VK_F7:
+                        if (frm.getBtnSem().isEnabled()) {
+                            sem(true);
                         }
                         break;
                     case KeyEvent.VK_T:
@@ -123,10 +136,10 @@ public class UIController {
         frm.getMenuExit().addActionListener(e -> salir());
 
         // Toolbar
-        frm.getBtnLex().addActionListener(e -> lex());
-        frm.getBtnSyn().addActionListener(e -> syn());
-        frm.getBtnSem().addActionListener(e -> sem());
-        frm.getBtnAll().addActionListener(e -> sem());
+        frm.getBtnLex().addActionListener(e -> lex(true));
+        frm.getBtnSyn().addActionListener(e -> syn(true));
+        frm.getBtnSem().addActionListener(e -> sem(true));
+        frm.getBtnAll().addActionListener(e -> all());
         frm.getBtnSTable().addActionListener(e -> toggleTSDialog());
         frm.getBtnOutPane().addActionListener(e -> toggleOutPane());
     }
@@ -149,10 +162,7 @@ public class UIController {
 
         // Botones
         frm.getMenuFileSave().setEnabled(false);
-        frm.getBtnLex().setEnabled(false);
-        frm.getBtnSyn().setEnabled(false);
-        frm.getBtnSem().setEnabled(false);
-        frm.getBtnAll().setEnabled(false);
+        btnState(S_INITIAL);
         frm.getBtnSTable().setEnabled(false);
 
         //Editor
@@ -181,9 +191,7 @@ public class UIController {
                 code.discardAllEdits();
                 frm.getMenuFileSave().setEnabled(true);
                 updateTitle(handle.getFile());
-                frm.getBtnLex().setEnabled(true);
-                frm.getBtnSyn().setEnabled(false);
-                frm.getBtnAll().setEnabled(false);
+                btnState(S_READY);
                 frm.getBtnSTable().setEnabled(false);
                 vaciarYOcultarTS();
             });
@@ -198,7 +206,7 @@ public class UIController {
             String content = frm.getTxtCode().getText();
             handle.write(content);
             digest = Util.md5(content);
-            frm.getBtnSyn().setEnabled(false);
+            btnState(S_READY);
         });
     }
 
@@ -221,9 +229,8 @@ public class UIController {
                 }
                 frm.getMenuFileSave().setEnabled(true);
                 updateTitle(handle.getFile());
-                frm.getBtnLex().setEnabled(true);
-                frm.getBtnSyn().setEnabled(false);
-                frm.getBtnAll().setEnabled(false);
+                btnState(S_READY);
+                frm.getBtnSTable().setEnabled(false);
             });
         }
 
@@ -290,69 +297,71 @@ public class UIController {
     /**
      * Ejecuta el análisis léxico del programa actual.
      */
-    private void lex() {
+    private void lex(boolean imprimirErrores) {
         if (codeChanged()) {
             promptChanged();
         } else if (handle != null) {
-            SwingUtilities.invokeLater(() -> {
-                if (!frm.getjSplitPane().isEnabled())
-                    setOutPaneVisible(true);
-                System.out.printf("ANÁLISIS LÉXICO DEL PROGRAMA \"%s\"\n", handle.getFile().toString());
-                if (al.analizar(handle.getFile().toString())) {
-                    System.out.println("El analizador léxico declaró el código como válido");
-                    frm.getBtnSyn().setEnabled(true);
-                } else {
-                    System.err.println("El analizador léxico declaró el código como inválido");
-                    frm.getBtnSyn().setEnabled(false);
-                }
-                poblarTS();
-                frm.getBtnSTable().setEnabled(true);
-                al.imprimirErrores();
-                System.out.println();
-            });
+            if (!frm.getjSplitPane().isEnabled())
+                setOutPaneVisible(true);
+            System.out.printf("ANÁLISIS LÉXICO DEL PROGRAMA \"%s\"\n", handle.getFile().toString());
+            if (al.analizar(handle.getFile().toString())) {
+                System.out.println("El analizador léxico declaró el código como válido");
+                btnState(S_LEX_GOOD);
+            } else {
+                System.err.println("El analizador léxico declaró el código como inválido");
+                btnState(S_LEX_ERR);
+            }
+            poblarTS();
+            if (imprimirErrores)
+                PilaErrores.imprimirErrores();
+            frm.getBtnSTable().setEnabled(true);
+            System.out.println();
         }
     }
 
     /**
      * Ejecuta el análisis sintáctico del programa actual.
      */
-    private void syn() {
+    private void syn(boolean imprimirErrores) {
         if (codeChanged()) {
             promptChanged();
         } else if (al.tS.size() > 0) {
-            SwingUtilities.invokeLater(() -> {
-                if (!frm.getjSplitPane().isEnabled())
-                    setOutPaneVisible(true);
-                System.out.printf("ANÁLISIS SINTÁCTICO DEL PROGRAMA \"%s\"\n", handle.getFile().toString());
-                if (as.analizar(al.tS)) {
-                    System.out.println("El analizador sintáctico declaró el código como válido");
-                    //frm.getBtnSem().setEnabled(true);
-                } else {
-                    System.err.println("El analizador sintáctico declaró el código como inválido");
-                    //frm.getBtnSem().setEnabled(false);
-                }
-                if (as.tieneArboles()) {
-                    System.out.println("Árboles construidos:");
-                    as.imprimirArboles();
-                }
-                as.imprimirErrores();
-                System.out.println();
-            });
+            if (!frm.getjSplitPane().isEnabled())
+                setOutPaneVisible(true);
+            System.out.printf("ANÁLISIS SINTÁCTICO DEL PROGRAMA \"%s\"\n", handle.getFile().toString());
+            if (as.analizar(al.tS)) {
+                System.out.println("El analizador sintáctico declaró el código como válido");
+                btnState(S_SYN_GOOD);
+            } else {
+                System.err.println("El analizador sintáctico declaró el código como inválido");
+                btnState(S_SYN_ERR);
+            }
+            if (as.tieneArboles()) {
+                System.out.println("Árboles construidos:");
+                as.imprimirArboles();
+            }
+            if (imprimirErrores)
+                PilaErrores.imprimirErrores();
+            System.out.println();
         }
     }
 
     /**
      * Ejecuta el análisis semántico del programa actual.
      */
-    private void sem() {
-        System.err.println("I SLEEP");
+    private void sem(boolean imprimirErrores) {
+        System.err.println("Análisis semántico no implementado aún!");
     }
 
     /**
      * Ejecuta todos los análisis en cadena.
      */
     private void all() {
-        System.err.println("No implementado aun!");
+        lex(false);
+        syn(false);
+        //sem();
+        PilaErrores.imprimirErrores();
+
     }
 
     /**
@@ -412,4 +421,63 @@ public class UIController {
         return !digest.equals(newDigest);
     }
 
+    private void btnState(int state) {
+        SwingUtilities.invokeLater(() -> {
+            frm.getBtnLex().setEnabled(state >= S_READY);
+            frm.getBtnSyn().setEnabled(state >= S_LEX_GOOD);
+            frm.getBtnSem().setEnabled(state >= S_SYN_GOOD);
+            frm.getBtnAll().setEnabled(state >= S_READY);
+            switch (state) {
+                case S_INITIAL:
+                    frm.getBtnLex().setBackground(C_DEFAULT);
+                    frm.getBtnSyn().setBackground(C_DEFAULT);
+                    frm.getBtnSem().setBackground(C_DEFAULT);
+                    break;
+                case S_READY:
+                    frm.getBtnLex().setBackground(C_YELLOW);
+                    frm.getBtnSyn().setBackground(C_DEFAULT);
+                    frm.getBtnSem().setBackground(C_DEFAULT);
+                    break;
+                case S_LEX_ERR:
+                    frm.getBtnLex().setBackground(C_RED);
+                    break;
+                case S_LEX_GOOD:
+                    frm.getBtnLex().setBackground(C_GREEN);
+                    frm.getBtnSyn().setBackground(C_YELLOW);
+                    break;
+                case S_SYN_ERR:
+                    frm.getBtnSyn().setBackground(C_RED);
+                    break;
+                case S_SYN_GOOD:
+                    frm.getBtnSyn().setBackground(C_GREEN);
+                    frm.getBtnSem().setBackground(C_YELLOW);
+                    break;
+                case S_SEM_ERR:
+                    frm.getBtnLex().setBackground(C_GREEN);
+                    frm.getBtnSyn().setBackground(C_GREEN);
+                    frm.getBtnSem().setBackground(C_RED);
+                    break;
+                case S_SEM_GOOD:
+                    frm.getBtnLex().setBackground(C_GREEN);
+                    frm.getBtnSyn().setBackground(C_GREEN);
+                    frm.getBtnSem().setBackground(C_GREEN);
+                    break;
+            }
+        });
+    }
+
+
+    private static final int S_INITIAL = 0;
+    private static final int S_READY = 10;
+    private static final int S_LEX_ERR = 11;
+    private static final int S_LEX_GOOD = 12;
+    private static final int S_SYN_ERR = 21;
+    private static final int S_SYN_GOOD = 22;
+    private static final int S_SEM_ERR = 31;
+    private static final int S_SEM_GOOD = 32;
+
+    private final Color C_RED = new Color(255, 105, 97);
+    private final Color C_YELLOW = new Color(253, 253, 150);
+    private final Color C_GREEN = new Color(119, 221, 119);
+    private final Color C_DEFAULT;
 }

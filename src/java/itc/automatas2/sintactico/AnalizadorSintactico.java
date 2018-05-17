@@ -7,9 +7,17 @@ import itc.automatas2.misc.Error;
 
 import java.util.ArrayList;
 
+
 public class AnalizadorSintactico {
+
     private ArrayList<ArbolSintactico> arboles;
 
+    /**
+     * Ejecuta el analisis sintactico del programa a partir de su tabla de simbolos.
+     *
+     * @param ts la tabla de símbolos.
+     * @return <code>true</code> si el análisis no generó errores.
+     */
     public boolean analizar(TablaSimbolos ts) {
         arboles = new ArrayList<>();
         Estructuras.cont = 0;
@@ -75,6 +83,9 @@ public class AnalizadorSintactico {
         return true;
     }
 
+    /**
+     * Se encarga de imprimir lo errores obtenidos del analisis sintactico y errores que se presentaron en esta fase.
+     */
     public void imprimirErrores() {
         if (PilaErrores.size() > 0) {
             System.err.println("Se encontraron errores durante el análisis sintáctico:");
@@ -110,6 +121,9 @@ public class AnalizadorSintactico {
         }
     }
 
+    /**
+     * Imprime los arboles generados despues de la validacion de la secuencia de los tokens
+     */
     public void imprimirArboles() {
         if (arboles != null)
             for (ArbolSintactico arbol : arboles) {
