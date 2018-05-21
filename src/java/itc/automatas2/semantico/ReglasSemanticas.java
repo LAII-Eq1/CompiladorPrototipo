@@ -186,6 +186,12 @@ class ReglasSemanticas {
                             nombre, ts.getByID(na.hijos.get(0).REF).LINE)
             );
         }
+        if (getTipo(ts, na.hijos.get(2).REF) != Tipos.INT) {
+            throw new TipoIncorrectoException(
+                    String.format("El contador en un ciclo for debe ser de tipo INT (línea %d).",
+                            ts.getByID(na.hijos.get(0).REF).LINE)
+            );
+        }
         int tipoL = getTipo(ts, na.hijos.get(4).REF);
         int tipoR = getTipo(ts, na.hijos.get(6).REF);
         if (tipoL != Tipos.INT || tipoR != Tipos.INT)
