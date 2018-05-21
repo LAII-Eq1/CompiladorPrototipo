@@ -118,25 +118,25 @@ public class AnalizadorLexico {
                             found = true;
                             break;
                         case "int":
-                            tS.meter(new RegistroTS(token, Tokens.T_INT, Tipos.VOID, tok.archivo.getNoLinea()));
+                            tS.meter(new RegistroTS(token, Tokens.T_INT, Tipos.INT, tok.archivo.getNoLinea()));
                             ultimoTipo = Tipos.INT;
                             foundFunc = false;
                             found = true;
                             break;
                         case "real":
-                            tS.meter(new RegistroTS(token, Tokens.T_REAL, Tipos.VOID, tok.archivo.getNoLinea()));
+                            tS.meter(new RegistroTS(token, Tokens.T_REAL, Tipos.REAL, tok.archivo.getNoLinea()));
                             ultimoTipo = Tipos.REAL;
                             foundFunc = false;
                             found = true;
                             break;
                         case "bool":
-                            tS.meter(new RegistroTS(token, Tokens.T_BOOL, Tipos.VOID, tok.archivo.getNoLinea()));
+                            tS.meter(new RegistroTS(token, Tokens.T_BOOL, Tipos.BOOL, tok.archivo.getNoLinea()));
                             ultimoTipo = Tipos.BOOL;
                             foundFunc = false;
                             found = true;
                             break;
                         case "string":
-                            tS.meter(new RegistroTS(token, Tokens.T_STRING, Tipos.VOID, tok.archivo.getNoLinea()));
+                            tS.meter(new RegistroTS(token, Tokens.T_STRING, Tipos.STR, tok.archivo.getNoLinea()));
                             ultimoTipo = Tipos.STR;
                             foundFunc = false;
                             found = true;
@@ -356,38 +356,6 @@ public class AnalizadorLexico {
             error = true;
         }
         return !error;
-    }
-
-    /**
-     * Imprime la pila de errores en la salida estándar.
-     */
-    public void imprimirErrores() {
-        if (PilaErrores.size() > 0) {
-            System.err.println("Se encontraron errores durante el análisis léxico:");
-            while (PilaErrores.size() > 0) {
-                RegistroErr reg = PilaErrores.sacar();
-                Error err = BaseErrores.getError(reg.ERR_ID);
-                switch (reg.ERR_ID) {
-                    //Genéricos
-                    case 10:
-                        err.setReason(String.format("(RUTA: %s)", reg.LEXEMA));
-                        break;
-                    case 11:
-                        err.setReason(String.format("(RUTA: %s)", reg.LEXEMA));
-                        break;
-                    //Léxicos
-                    case 110:
-                        err.setReason(String.format("No se pudo identificar el token \"%s\" en la línea %d", reg.LEXEMA, reg.LINEA_N));
-                        break;
-                    case 120:
-                        err.setReason(String.format("El token '%s' en la línea %d contiene símbolos no reconocibles (fuera del código ASCII). ", reg.LEXEMA, reg.LINEA_N));
-                        break;
-                }
-                System.err.println(err);
-            }
-        } else {
-            System.out.println("No se encontraron errores durante el análisis léxico");
-        }
     }
 
     /**

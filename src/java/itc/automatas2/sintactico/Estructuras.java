@@ -131,7 +131,7 @@ public class Estructuras {
         do {
             switch (ObtenerReglaProd(cont, ts)) {
                 case ReglasProd.R_CALL:
-                    a2 = r_call(cont, ts);
+                    a2 = r_call(cont, ts, false);
                     a.meter(a.raiz, a2.raiz);
                     break;
                 case ReglasProd.R_RETORNO:
@@ -162,6 +162,9 @@ public class Estructuras {
                     a2 = r_asignacion(cont, ts);
                     a.meter(a.raiz, a2.raiz);
                     break;
+                default:
+                    PilaErrores.meter(new RegistroErr(240, reg.LINE, reg.NOMBRE, reg.TOKEN_ID));
+                    throw new SecuenciaIncorrectaException();
             }
             reg = ts.get(cont);
         } while (reg.TOKEN_ID != Tokens.T_RBRACE);
@@ -183,7 +186,7 @@ public class Estructuras {
      * @return el árbol sintáctico de la estructura
      * @throws SecuenciaIncorrectaException cuando se encuentra un token inesperado en la secuencia.
      */
-    public static ArbolSintactico r_call(int i, TablaSimbolos ts) throws SecuenciaIncorrectaException {
+    public static ArbolSintactico r_call(int i, TablaSimbolos ts, boolean asignacion) throws SecuenciaIncorrectaException {
         cont = i;
         ArbolSintactico a = new ArbolSintactico();
         RegistroTS reg;
@@ -222,6 +225,18 @@ public class Estructuras {
         actual.TOKEN_ID = Tokens.T_RPAREN;
         actual.REF = reg.ID;
         a.meter(a.raiz, actual);
+
+        if (!asignacion) {
+            reg = ts.get(++cont);
+            if (reg.TOKEN_ID != Tokens.T_SEMICOLON) {
+                PilaErrores.meter(new RegistroErr(220, reg.LINE, reg.NOMBRE));
+                throw new SecuenciaIncorrectaException();
+            }
+            actual = new NodoArbol();
+            actual.TOKEN_ID = Tokens.T_SEMICOLON;
+            actual.REF = reg.ID;
+            a.meter(a.raiz, actual);
+        }
         cont++;
         return a;
     }
@@ -259,6 +274,7 @@ public class Estructuras {
         actual.TOKEN_ID = Tokens.T_FUN;
         actual.REF = reg.ID;
         a.meter(a.raiz, actual);
+        RegistroTS funcName = reg;
 
         reg = ts.get(++cont);
         if (reg.TOKEN_ID != Tokens.T_LPAREN) {
@@ -301,6 +317,7 @@ public class Estructuras {
                     actual.TOKEN_ID = reg.TOKEN_ID;
                     actual.REF = reg.ID;
                     a.meter(a.raiz, actual);
+                    funcName.TIPO = reg.TIPO;
                     break;
                 default:
                     PilaErrores.meter(new RegistroErr(240, reg.LINE, reg.NOMBRE, reg.TOKEN_ID));
@@ -341,7 +358,8 @@ public class Estructuras {
             case Tokens.T_VAR:
             case Tokens.T_INT_CONST:
             case Tokens.T_REAL_CONST:
-            case Tokens.T_BOOL_CONST:
+            case Tokens.T_TRUE:
+            case Tokens.T_FALSE:
             case Tokens.T_STR_CONST:
                 actual = new NodoArbol();
                 actual.TOKEN_ID = reg.TOKEN_ID;
@@ -650,7 +668,8 @@ public class Estructuras {
                 case Tokens.T_VAR:
                 case Tokens.T_INT_CONST:
                 case Tokens.T_REAL_CONST:
-                case Tokens.T_BOOL_CONST:
+                case Tokens.T_TRUE:
+                case Tokens.T_FALSE:
                 case Tokens.T_STR_CONST:
                     actual = new NodoArbol();
                     actual.TOKEN_ID = reg.TOKEN_ID;
@@ -818,7 +837,6 @@ public class Estructuras {
                 switch (reg.TOKEN_ID) {
                     case Tokens.T_INT_CONST:
                     case Tokens.T_REAL_CONST:
-                    case Tokens.T_BOOL_CONST:
                     case Tokens.T_STR_CONST:
                     case Tokens.T_TRUE:
                     case Tokens.T_FALSE:
@@ -830,7 +848,7 @@ public class Estructuras {
                         cont++;
                         break;
                     case Tokens.T_FUN:
-                        a2 = r_call(cont, ts);
+                        a2 = r_call(cont, ts, true);
                         a.meter(a.raiz, a2.raiz);
                         break;
                 }
@@ -872,6 +890,8 @@ public class Estructuras {
         switch (reg.TOKEN_ID) {
             case Tokens.T_INT_CONST:
             case Tokens.T_REAL_CONST:
+            case Tokens.T_TRUE:
+            case Tokens.T_FALSE:
             case Tokens.T_VAR:
             case Tokens.T_STR_CONST:
                 actual = new NodoArbol();
@@ -906,6 +926,8 @@ public class Estructuras {
         switch (reg.TOKEN_ID) {
             case Tokens.T_INT_CONST:
             case Tokens.T_REAL_CONST:
+            case Tokens.T_TRUE:
+            case Tokens.T_FALSE:
             case Tokens.T_VAR:
             case Tokens.T_STR_CONST:
                 actual = new NodoArbol();
@@ -943,6 +965,8 @@ public class Estructuras {
         switch (reg.TOKEN_ID) {
             case Tokens.T_INT_CONST:
             case Tokens.T_REAL_CONST:
+            case Tokens.T_TRUE:
+            case Tokens.T_FALSE:
             case Tokens.T_VAR:
             case Tokens.T_STR_CONST:
                 actual = new NodoArbol();
@@ -975,6 +999,8 @@ public class Estructuras {
         switch (reg.TOKEN_ID) {
             case Tokens.T_INT_CONST:
             case Tokens.T_REAL_CONST:
+            case Tokens.T_TRUE:
+            case Tokens.T_FALSE:
             case Tokens.T_VAR:
             case Tokens.T_STR_CONST:
                 actual = new NodoArbol();

@@ -41,6 +41,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         btnMenuAyudaLex = new javax.swing.JMenuItem();
         btnMenuAyudaSyn = new javax.swing.JMenuItem();
+        btnMenuAyudaSem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("E1");
@@ -202,6 +203,9 @@ public class MainFrame extends javax.swing.JFrame {
         btnMenuAyudaSyn.setText("Análisis sintáctico");
         jMenu2.add(btnMenuAyudaSyn);
 
+        btnMenuAyudaSem.setText("Análisis semántico");
+        jMenu2.add(btnMenuAyudaSem);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -260,6 +264,10 @@ public class MainFrame extends javax.swing.JFrame {
     public JMenuItem getMenuAyudaSyn() {
         return btnMenuAyudaSyn;
     }
+    
+    public JMenuItem getMenuAyudaSem() {
+        return btnMenuAyudaSem;
+    }
 
     public JTextPane getTxtOut() {
         return txtOut;
@@ -278,6 +286,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnAll;
     private javax.swing.JButton btnLex;
     private javax.swing.JMenuItem btnMenuAyudaLex;
+    private javax.swing.JMenuItem btnMenuAyudaSem;
     private javax.swing.JMenuItem btnMenuAyudaSyn;
     private javax.swing.JButton btnOutPane;
     private javax.swing.JButton btnSTable;

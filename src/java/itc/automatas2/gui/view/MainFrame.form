@@ -73,6 +73,11 @@
                 <Property name="text" type="java.lang.String" value="An&#xe1;lisis sint&#xe1;ctico"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="btnMenuAyudaSem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="An&#xe1;lisis sem&#xe1;ntico"/>
+              </Properties>
+            </MenuItem>
           </SubComponents>
         </Menu>
       </SubComponents>

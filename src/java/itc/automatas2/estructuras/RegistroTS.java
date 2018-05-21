@@ -7,7 +7,7 @@ public class RegistroTS {
     public final String ID;
     public final String NOMBRE;
     public final int TOKEN_ID;
-    public final int TIPO;
+    public int TIPO;
     public String VAL;
     public final int LINE;
 

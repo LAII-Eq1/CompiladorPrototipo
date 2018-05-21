@@ -8,6 +8,7 @@ import itc.automatas2.gui.view.TablaSimbolosDialog;
 import itc.automatas2.lexico.AnalizadorLexico;
 import itc.automatas2.lexico.Tipos;
 import itc.automatas2.lexico.Tokens;
+import itc.automatas2.semantico.AnalizadorSemantico;
 import itc.automatas2.sintactico.AnalizadorSintactico;
 import org.fife.ui.rsyntaxtextarea.AbstractTokenMakerFactory;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
@@ -34,7 +35,8 @@ public class UIController {
     private String digest;
     private ArchivoModel handle;
     private AnalizadorLexico al;
-    private AnalizadorSintactico as;
+    private AnalizadorSintactico aSi;
+    private AnalizadorSemantico aSe;
 
 
     /**
@@ -47,7 +49,8 @@ public class UIController {
         this.dlgTable = new TablaSimbolosDialog();
         this.fc = new JFileChooser();
         this.al = new AnalizadorLexico();
-        this.as = new AnalizadorSintactico();
+        this.aSi = new AnalizadorSintactico();
+        this.aSe = new AnalizadorSemantico();
         dlgTable.setLocationRelativeTo(frm);
         initListeners();
         configView();
@@ -128,6 +131,15 @@ public class UIController {
             if (Desktop.isDesktopSupported()) {
                 try {
                     Desktop.getDesktop().open(new File("docs/sintactico.pdf"));
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+        frm.getMenuAyudaSem().addActionListener(e -> {
+            if (Desktop.isDesktopSupported()) {
+                try {
+                    Desktop.getDesktop().open(new File("docs/semantico.pdf"));
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
@@ -329,17 +341,18 @@ public class UIController {
             if (!frm.getjSplitPane().isEnabled())
                 setOutPaneVisible(true);
             System.out.printf("ANÁLISIS SINTÁCTICO DEL PROGRAMA \"%s\"\n", handle.getFile().toString());
-            if (as.analizar(al.tS)) {
+            if (aSi.analizar(al.tS)) {
                 System.out.println("El analizador sintáctico declaró el código como válido");
                 btnState(S_SYN_GOOD);
             } else {
                 System.err.println("El analizador sintáctico declaró el código como inválido");
                 btnState(S_SYN_ERR);
             }
-            if (as.tieneArboles()) {
+            if (aSi.tieneArboles()) {
                 System.out.println("Árboles construidos:");
-                as.imprimirArboles();
+                aSi.imprimirArboles();
             }
+            poblarTS();
             if (imprimirErrores)
                 PilaErrores.imprimirErrores();
             System.out.println();
@@ -350,17 +363,37 @@ public class UIController {
      * Ejecuta el análisis semántico del programa actual.
      */
     private void sem(boolean imprimirErrores) {
-        System.err.println("Análisis semántico no implementado aún!");
+        if (codeChanged()) {
+            promptChanged();
+        } else if (aSi.tieneArboles()) {
+            if (!frm.getjSplitPane().isEnabled())
+                setOutPaneVisible(true);
+            System.out.printf("ANÁLISIS SINTÁCTICO DEL PROGRAMA \"%s\"\n", handle.getFile().toString());
+            if (aSe.analizar(al.tS, aSi.arboles)) {
+                System.out.println("El analizador semántico declaró el código como válido");
+                btnState(S_SEM_GOOD);
+            } else {
+                System.err.println("El analizador semántico declaró el código como inválido");
+                btnState(S_SEM_ERR);
+            }
+            if (imprimirErrores)
+                PilaErrores.imprimirErrores();
+            System.out.println();
+        }
     }
 
     /**
      * Ejecuta todos los análisis en cadena.
      */
     private void all() {
-        lex(false);
-        syn(false);
-        //sem();
-        PilaErrores.imprimirErrores();
+        if (codeChanged()) {
+            promptChanged();
+        } else {
+            lex(false);
+            syn(false);
+            sem(false);
+            PilaErrores.imprimirErrores();
+        }
 
     }
 

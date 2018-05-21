@@ -47,8 +47,6 @@ public class PilaErrores {
                 switch (reg.ERR_ID) {
                     //De sistema
                     case 10:
-                        err.setReason(String.format("(RUTA: %s)", reg.LEXEMA));
-                        break;
                     case 11:
                         err.setReason(String.format("(RUTA: %s)", reg.LEXEMA));
                         break;
@@ -64,19 +62,23 @@ public class PilaErrores {
                         break;
                     //Sintacticos
                     case 210:
-                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
-                        break;
                     case 220:
-                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
-                        break;
                     case 230:
+                    case 250:
                         err.setReason(String.format("(línea %d)", reg.LINEA_N));
                         break;
                     case 240:
                         err.setReason(String.format("No se esperaba el token %s ('%s') cerca de la línea %d.", Tokens.nombres[reg.TOKEN_ID], reg.LEXEMA, reg.LINEA_N));
                         break;
-                    case 250:
-                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
+                    //Semánticos
+                    case 310:
+                    case 320:
+                    case 330:
+                    case 340:
+                    case 350:
+                    case 360:
+                    case 370:
+                        err.setReason(reg.LEXEMA);
                         break;
                 }
                 System.err.println(err);

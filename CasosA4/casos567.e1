@@ -1,0 +1,46 @@
+####################################################################
+#                      CASO DE ESTUDIO 5, 6 y 7                    #
+#                      Retorno de dato incorrecto                  #
+#                        Función sin retorno                       #            
+#                        Sentencia inesperada                      #
+####################################################################
+ 
+func saludar ( ) : string {         //La estructura de esta función
+	string hola = "hola";			//es la correcta
+    string mundo = "mundo";
+	string saludo;
+    saludo = hola + mundo;
+	return saludo ;
+}
+
+func multiplicar ( real num1 , real num2 ) : int {       //La función espera de
+	real mul ;						                     //retorno un tipo de dato
+	mul = num1 * num2 ;					                 //int y no real y esto
+	return mul ;					                     // genera un error.
+}
+
+func despedida ( ) : string {   //La función espera un return
+	string h = "hasta";			//de tipo string y este no existe, por lo
+    string l = "luego";			// que genera un error
+	string des;
+    des = h + l;
+}
+
+func div ( real num3 , real num4 ) : real {
+	real divi ;
+	divi = num3 * num4 ;
+	return divi ;
+}
+
+int x = 7;
+int y = 5;
+
+if (x > 5){
+	println "X es mayor que Y";	//Esto es una sentencia inesperada, ya que 
+	return x;				    // dentro del if no se esperaba un return
+}
+
+string texto = saludar();
+println texto;
+texto = despedida();
+println texto;

@@ -24,6 +24,15 @@ public class BaseErrores {
         tablaErrores.put(230, new Error(230, "Apertura o cierre de llaves o corchetes erróneas."));
         tablaErrores.put(240, new Error(240, "Mala estructuración de sentencias según el lenguaje."));
         tablaErrores.put(250, new Error(250, "Estructura no reconocida por el lenguaje."));
+
+        //Errores semánticos
+        tablaErrores.put(310, new Error(310, "Identificador no declarado."));
+        tablaErrores.put(320, new Error(320, "Error de tipos de dato."));
+        tablaErrores.put(330, new Error(330, "Pase de parámetros incorrecto."));
+        tablaErrores.put(340, new Error(340, "Identificador ya declarado."));
+        tablaErrores.put(350, new Error(350, "Retorno incorrecto."));
+        tablaErrores.put(360, new Error(360, "Función sin retorno."));
+        tablaErrores.put(370, new Error(370, "Sentencia inesperada."));
     }
 
     /**

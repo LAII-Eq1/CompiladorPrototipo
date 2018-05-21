@@ -1,0 +1,47 @@
+####################################################################
+#                      CASO DE ESTUDIO 3 y 4                       #
+#           Falta de declaración de variables y funciones          #
+# Declaración de una variable o función con un nombre ya declarado #                                                          
+####################################################################
+
+func fact (int fanum): int { 	     
+	if (fanum == 1) {              
+		return 1;                 
+	} else {                       
+		return fanum;                                          
+       }
+}
+
+func fact (int finum): int {     //la función fact ya fue creada con anterioridad
+                                 //por lo tanto es considerado como error.
+    if (finum == 1) {
+        return 1;
+    } else if (finum == 2) {
+        return 1;                     
+    } else {
+        return finum;
+
+    }
+}
+
+int num = 0;                         
+int fibo;                              
+
+real fibo;                      //fibo es una variable previamente definida como
+int facto;                      //tipo entero, así que este es un error.
+
+println "Dame un numero para hacer unos calculos:"; 
+print ">";                           
+read Cheese;                     //Variable Cheese no ha sido creada, por lo tanto facto = fact(num);
+                                 //es un error semantico.
+		      
+fibo = meow(num);	             //La función meow no ha sido creada
+                                 //lo cual es considerado como un error sintáctico
+println "El factorial de ";
+print Cheese;
+print " es: ";
+print facto;
+println "El numero de fibonacci de ";
+print Cheese;
+print " es: ";
+print fibo;

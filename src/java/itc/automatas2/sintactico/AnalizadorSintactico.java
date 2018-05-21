@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class AnalizadorSintactico {
 
-    private ArrayList<ArbolSintactico> arboles;
+    public ArrayList<ArbolSintactico> arboles;
 
     /**
      * Ejecuta el analisis sintactico del programa a partir de su tabla de simbolos.
@@ -26,7 +26,7 @@ public class AnalizadorSintactico {
                 switch (Estructuras.ObtenerReglaProd(Estructuras.cont, ts)) {
                     case ReglasProd.R_CALL:
                         arboles.add(
-                                Estructuras.r_call(Estructuras.cont, ts)
+                                Estructuras.r_call(Estructuras.cont, ts, false)
                         );
                         break;
                     case ReglasProd.R_METODO:
@@ -81,44 +81,6 @@ public class AnalizadorSintactico {
             return false;
         }
         return true;
-    }
-
-    /**
-     * Se encarga de imprimir lo errores obtenidos del analisis sintactico y errores que se presentaron en esta fase.
-     */
-    public void imprimirErrores() {
-        if (PilaErrores.size() > 0) {
-            System.err.println("Se encontraron errores durante el análisis sintáctico:");
-            while (PilaErrores.size() > 0) {
-                RegistroErr reg = PilaErrores.sacar();
-                Error err = BaseErrores.getError(reg.ERR_ID);
-                switch (reg.ERR_ID) {
-                    //De sistema
-                    case 12:
-                        err.setReason("Verifique que todas las llaves estén cerradas.");
-                        break;
-                    //Sintacticos
-                    case 210:
-                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
-                        break;
-                    case 220:
-                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
-                        break;
-                    case 230:
-                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
-                        break;
-                    case 240:
-                        err.setReason(String.format("No se esperaba el token %s ('%s') en la línea %d.", Tokens.nombres[reg.TOKEN_ID], reg.LEXEMA, reg.LINEA_N));
-                        break;
-                    case 250:
-                        err.setReason(String.format("(línea %d)", reg.LINEA_N));
-                        break;
-                }
-                System.err.println(err);
-            }
-        } else {
-            System.out.println("No se encontraron errores durante el análisis sintáctico");
-        }
     }
 
     /**
