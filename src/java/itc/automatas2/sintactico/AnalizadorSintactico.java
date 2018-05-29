@@ -34,11 +34,6 @@ public class AnalizadorSintactico {
                                 Estructuras.r_metodo(Estructuras.cont, ts)
                         );
                         break;
-                    case ReglasProd.R_RETORNO:
-                        arboles.add(
-                                Estructuras.r_retorno(Estructuras.cont, ts)
-                        );
-                        break;
                     case ReglasProd.R_IF:
                         arboles.add(
                                 Estructuras.r_if(Estructuras.cont, ts)
@@ -69,7 +64,11 @@ public class AnalizadorSintactico {
                                 Estructuras.r_asignacion(Estructuras.cont, ts)
                         );
                         break;
-
+                    case ReglasProd.R_RETORNO:
+                        PilaErrores.meter(new RegistroErr(240, ts.get(Estructuras.cont).LINE,
+                                ts.get(Estructuras.cont).NOMBRE, ts.get(Estructuras.cont).TOKEN_ID));
+                        arboles = null;
+                        return false;
                 }
             } while (Estructuras.cont < ts.size());
         } catch (EstructuraNoReconocidaException | SecuenciaIncorrectaException e) {

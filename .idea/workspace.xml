@@ -50,84 +50,7 @@
     <favorites_list name="AnalizadorLexico" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AnalizadorSemantico.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/AnalizadorSemantico.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UIController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/controller/UIController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5610">
-              <caret line="356" column="23" selection-start-line="356" selection-start-column="23" selection-end-line="356" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnalizadorSintactico.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/AnalizadorSintactico.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AboutDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/view/AboutDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1037">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReglasSemanticas.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/ReglasSemanticas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="395" column="11" selection-start-line="395" selection-start-column="11" selection-end-line="395" selection-end-column="11" />
-              <folding>
-                <element signature="docComment;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_func#0;class#ReglasSemanticas#0" />
-                <element signature="method#r_func#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_asig#0;class#ReglasSemanticas#0" />
-                <element signature="method#r_asig#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_llamada#0;class#ReglasSemanticas#0" />
-                <element signature="method#r_llamada#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_for#0;class#ReglasSemanticas#0" />
-                <element signature="method#r_for#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_while#0;class#ReglasSemanticas#0" />
-                <element signature="method#r_while#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_leer_imp#0;class#ReglasSemanticas#0" />
-                <element signature="method#r_leer_imp#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_if#0;class#ReglasSemanticas#0" />
-                <element signature="method#r_if#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_exp#0;class#ReglasSemanticas#0" />
-                <element signature="method#r_exp#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_retorno#0;class#ReglasSemanticas#0" />
-                <element signature="method#r_retorno#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#r_bloque#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#variableDeclarada#0;class#ReglasSemanticas#0" />
-                <element signature="method#variableDeclarada#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#getTipo#0;class#ReglasSemanticas#0" />
-                <element signature="method#getTipo#0;class#ReglasSemanticas#0" />
-                <element signature="docComment;method#esReservadaTipo#0;class#ReglasSemanticas#0" />
-                <element signature="method#esReservadaTipo#0;class#ReglasSemanticas#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -138,7 +61,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>undoma</find>
       <find>undomana</find>
       <find>semico</find>
       <find>pErr</find>
@@ -168,6 +90,7 @@
       <find>funcs</find>
       <find>na.hijos.get(0).ref</find>
       <find>“|”</find>
+      <find>sec</find>
     </findStrings>
     <replaceStrings>
       <replace>public static int $1 = $2;</replace>
@@ -313,7 +236,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -345,6 +267,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="automatas2" type="462c0819:PsiDirectoryNode" />
+              <item name="estructuras" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CompiladorPrototipo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompiladorPrototipo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="automatas2" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -366,6 +296,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -805,11 +736,12 @@
       <workItem from="1527004908198" duration="776000" />
       <workItem from="1527530658358" duration="5461000" />
       <workItem from="1527554668390" duration="768000" />
+      <workItem from="1527560185452" duration="609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216403000" />
+    <option name="totallyTimeSpent" value="217012000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -822,20 +754,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32412326" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32352942" />
       <window_info anchor="right" id="Palette&#9;" order="10" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="right" id="Maven Projects" order="4" visible="true" weight="0.18603411" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.18603411" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.26688454" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22228146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22441365" />
       <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -857,13 +788,12 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32731137" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="Designer" order="4" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.6013889" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3296875" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="5" />
       <window_info anchor="right" id="Properties" order="5" />
       <window_info anchor="bottom" id="Terminal" order="9" />
@@ -873,18 +803,19 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.329653" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2489019" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2489019" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="10" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3296875" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32980973" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39905363" />
     </layout-to-restore>
@@ -915,13 +846,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/lib/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Runnable.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/javax/swing/undo/UndoManager.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/fifesoft/rsyntaxtextarea/2.6.1/rsyntaxtextarea-2.6.1-sources.jar!/org/fife/ui/rtextarea/RUndoManager.java" />
@@ -990,13 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/RegistroErr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1077,13 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/misc/BaseErrores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/TablaVar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1130,30 +1040,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CasosA4/casos567 - Copy.e1" />
-    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/PilaErrores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="79" column="27" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/Estructuras.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="761" column="108" selection-start-line="761" selection-start-column="108" selection-end-line="761" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/about.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/view/AboutDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/about.png" />
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/view/AboutDialog.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1196,9 +1084,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/ArbolSintactico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/Estructuras.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="35" column="46" lean-forward="true" selection-start-line="35" selection-start-column="46" selection-end-line="36" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/PilaErrores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="79" column="27" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/misc/Error.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/misc/BaseErrores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="24" column="102" lean-forward="true" selection-start-line="24" selection-start-column="102" selection-end-line="25" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/RegistroErr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/AnalizadorSintactico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/AnalizadorSemantico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
+        <state>
           <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1208,22 +1145,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/controller/UIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5610">
-          <caret line="356" column="23" selection-start-line="356" selection-start-column="23" selection-end-line="356" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/ArbolSintactico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/AnalizadorSintactico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+        <state relative-caret-position="191">
+          <caret line="360" column="23" selection-start-line="360" selection-start-column="23" selection-end-line="360" selection-end-column="23" />
         </state>
       </provider>
     </entry>
