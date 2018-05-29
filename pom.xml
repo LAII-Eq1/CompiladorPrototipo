@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>AnalizadorLexico</artifactId>
+    <artifactId>CompiladorPrototipoE1</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
     <properties>
@@ -22,6 +22,11 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/res</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -32,18 +37,39 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                     <archive>
                         <manifest>
-                            <!-- Jar file entry point -->
                             <mainClass>itc.automatas2.gui.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
-
+            <!-- no-deps
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>itc.automatas2.gui.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            -->
         </plugins>
     </build>
 </project>

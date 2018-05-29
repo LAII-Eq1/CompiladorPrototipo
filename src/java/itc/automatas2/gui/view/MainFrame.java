@@ -42,6 +42,8 @@ public class MainFrame extends javax.swing.JFrame {
         btnMenuAyudaLex = new javax.swing.JMenuItem();
         btnMenuAyudaSyn = new javax.swing.JMenuItem();
         btnMenuAyudaSem = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        btnMenuAyudaAcerca = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("E1");
@@ -165,21 +167,25 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.setDoubleBuffered(true);
 
+        jMenu1.setMnemonic('A');
         jMenu1.setText("Archivo");
         jMenu1.setDoubleBuffered(true);
 
         menuFileOpen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        menuFileOpen.setMnemonic('A');
         menuFileOpen.setText("Abrir");
         menuFileOpen.setToolTipText("");
         menuFileOpen.setDoubleBuffered(true);
         jMenu1.add(menuFileOpen);
 
         menuFileSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        menuFileSave.setMnemonic('G');
         menuFileSave.setText("Guardar");
         menuFileSave.setDoubleBuffered(true);
         jMenu1.add(menuFileSave);
 
         menuFileSaveAs.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        menuFileSaveAs.setMnemonic('C');
         menuFileSaveAs.setText("Guardar como");
         menuFileSaveAs.setDoubleBuffered(true);
         jMenu1.add(menuFileSaveAs);
@@ -188,6 +194,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu1.add(jSeparator1);
 
         menuExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        menuExit.setMnemonic('S');
         menuExit.setText("Salir");
         menuExit.setToolTipText("");
         menuExit.setDoubleBuffered(true);
@@ -195,16 +202,26 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setMnemonic('U');
         jMenu2.setText("Ayuda");
 
+        btnMenuAyudaLex.setMnemonic('l');
         btnMenuAyudaLex.setText("Análisis léxico");
         jMenu2.add(btnMenuAyudaLex);
 
+        btnMenuAyudaSyn.setMnemonic('s');
         btnMenuAyudaSyn.setText("Análisis sintáctico");
+        btnMenuAyudaSyn.setToolTipText("");
         jMenu2.add(btnMenuAyudaSyn);
 
+        btnMenuAyudaSem.setMnemonic('e');
         btnMenuAyudaSem.setText("Análisis semántico");
         jMenu2.add(btnMenuAyudaSem);
+        jMenu2.add(jSeparator2);
+
+        btnMenuAyudaAcerca.setMnemonic('a');
+        btnMenuAyudaAcerca.setText("Acerca de");
+        jMenu2.add(btnMenuAyudaAcerca);
 
         jMenuBar1.add(jMenu2);
 
@@ -264,27 +281,32 @@ public class MainFrame extends javax.swing.JFrame {
     public JMenuItem getMenuAyudaSyn() {
         return btnMenuAyudaSyn;
     }
-    
+
     public JMenuItem getMenuAyudaSem() {
         return btnMenuAyudaSem;
+    }
+
+    public JMenuItem getMenuAyudaAcerca() {
+        return btnMenuAyudaAcerca;
     }
 
     public JTextPane getTxtOut() {
         return txtOut;
     }
-    
-    public RSyntaxTextArea getTxtCode(){
+
+    public RSyntaxTextArea getTxtCode() {
         return rSyntaxTextArea1;
     }
-    
-    public RTextScrollPane getTxtCodeScrollPane(){
+
+    public RTextScrollPane getTxtCodeScrollPane() {
         return rTextScrollPane1;
     }
-    
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAll;
     private javax.swing.JButton btnLex;
+    private javax.swing.JMenuItem btnMenuAyudaAcerca;
     private javax.swing.JMenuItem btnMenuAyudaLex;
     private javax.swing.JMenuItem btnMenuAyudaSem;
     private javax.swing.JMenuItem btnMenuAyudaSyn;
@@ -298,6 +320,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JSplitPane jSplitPane;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenuItem menuExit;

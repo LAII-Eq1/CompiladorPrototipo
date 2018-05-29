@@ -3,6 +3,7 @@ package itc.automatas2.gui.controller;
 import itc.automatas2.estructuras.PilaErrores;
 import itc.automatas2.gui.lib.Util;
 import itc.automatas2.gui.model.ArchivoModel;
+import itc.automatas2.gui.view.AboutDialog;
 import itc.automatas2.gui.view.MainFrame;
 import itc.automatas2.gui.view.TablaSimbolosDialog;
 import itc.automatas2.lexico.AnalizadorLexico;
@@ -144,6 +145,9 @@ public class UIController {
                     e1.printStackTrace();
                 }
             }
+        });
+        frm.getMenuAyudaAcerca().addActionListener(e -> {
+            new AboutDialog();
         });
         frm.getMenuExit().addActionListener(e -> salir());
 
@@ -368,7 +372,7 @@ public class UIController {
         } else if (aSi.tieneArboles()) {
             if (!frm.getjSplitPane().isEnabled())
                 setOutPaneVisible(true);
-            System.out.printf("ANÁLISIS SINTÁCTICO DEL PROGRAMA \"%s\"\n", handle.getFile().toString());
+            System.out.printf("ANÁLISIS SEMÁNTICO DEL PROGRAMA \"%s\"\n", handle.getFile().toString());
             if (aSe.analizar(al.tS, aSi.arboles)) {
                 System.out.println("El analizador semántico declaró el código como válido");
                 btnState(S_SEM_GOOD);

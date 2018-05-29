@@ -27,52 +27,103 @@
     <SUITE FILE_PATH="coverage/AnalizadorLexico$Main.coverage" NAME="Main Coverage Results" MODIFIED="1520833498811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>itc.automatas2.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/CompiladorPrototipo$ui.ic" NAME="ui Coverage Results" MODIFIED="1526707815503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/AnalizadorLexico$casos24_e1.coverage" NAME="casos24.e1 Coverage Results" MODIFIED="1520833727698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>itc.automatas2.*</FILTER>
     </SUITE>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
     <option name="GROUP_SCHEMA" value="true" />
     <option name="GROUP_CONTENTS" value="false" />
     <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="AnalizadorLexico" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UIController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/controller/UIController.java">
+      <file leaf-file-name="AnalizadorSemantico.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/AnalizadorSemantico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="785">
-              <caret line="249" column="31" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="31" />
+            <state relative-caret-position="714">
+              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#initListeners#0;class#UIController#0" />
-                <element signature="class#2311:3166" />
-                <element signature="e#7143#7144#0" expanded="true" />
-                <element signature="e#7210#7211#0" expanded="true" />
-                <element signature="e#8536#8537#0" expanded="true" />
-                <element signature="e#8594#8595#0" expanded="true" />
-                <element signature="e#8620#8621#0" expanded="true" />
-                <element signature="e#8678#8679#0" expanded="true" />
-                <element signature="e#9608#9609#0" expanded="true" />
-                <element signature="e#9666#9667#0" expanded="true" />
-                <element signature="e#9715#9716#0" expanded="true" />
-                <element signature="e#9787#9788#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainFrame.form" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/view/MainFrame.form">
+      <file leaf-file-name="UIController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/controller/UIController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5355" />
+            <state relative-caret-position="5610">
+              <caret line="356" column="23" selection-start-line="356" selection-start-column="23" selection-end-line="356" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnalizadorSintactico.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/AnalizadorSintactico.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AboutDialog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/view/AboutDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1037">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReglasSemanticas.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/ReglasSemanticas.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1139">
+              <caret line="395" column="11" selection-start-line="395" selection-start-column="11" selection-end-line="395" selection-end-column="11" />
+              <folding>
+                <element signature="docComment;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_func#0;class#ReglasSemanticas#0" />
+                <element signature="method#r_func#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_asig#0;class#ReglasSemanticas#0" />
+                <element signature="method#r_asig#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_llamada#0;class#ReglasSemanticas#0" />
+                <element signature="method#r_llamada#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_for#0;class#ReglasSemanticas#0" />
+                <element signature="method#r_for#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_while#0;class#ReglasSemanticas#0" />
+                <element signature="method#r_while#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_leer_imp#0;class#ReglasSemanticas#0" />
+                <element signature="method#r_leer_imp#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_if#0;class#ReglasSemanticas#0" />
+                <element signature="method#r_if#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_exp#0;class#ReglasSemanticas#0" />
+                <element signature="method#r_exp#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_retorno#0;class#ReglasSemanticas#0" />
+                <element signature="method#r_retorno#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#r_bloque#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#variableDeclarada#0;class#ReglasSemanticas#0" />
+                <element signature="method#variableDeclarada#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#getTipo#0;class#ReglasSemanticas#0" />
+                <element signature="method#getTipo#0;class#ReglasSemanticas#0" />
+                <element signature="docComment;method#esReservadaTipo#0;class#ReglasSemanticas#0" />
+                <element signature="method#esReservadaTipo#0;class#ReglasSemanticas#0" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -87,36 +138,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>([A-Z_]+)[ \n]+[a-z]+[ \n]+([0-9]+)</find>
-      <find>([A-Z_]+)[ \n]+.+[ \n]+([0-9]+)</find>
-      <find>public static int</find>
-      <find>cont = cont \+ 1;\n[ ]+return this.(q[0-9])\(cont. car\);</find>
-      <find>([a-z]+) ?\|?</find>
-      <find>[.]</find>
-      <find>(\&quot;.\&quot;)</find>
-      <find>([A-Z_]+)[ \n]+(.+)[ \n]+([0-9]+)</find>
-      <find>[ \n]+([A-Z_]+)[ \n]+(.+)[ \n]+([0-9]+)</find>
-      <find>rgg</find>
-      <find>k</find>
-      <find>kek</find>
-      <find>([A-Z_]+) = ([0-9]+);</find>
-      <find>T_TR</find>
-      <find>(Tokens\.T_[A-Z_]+), 0\)</find>
-      <find>ASSIG</find>
-      <find>meter(token,</find>
-      <find>(cont,</find>
-      <find>|</find>
-      <find>Lex().set</find>
-      <find>Syn().set</find>
-      <find>getnol</find>
-      <find>(Tipos\.[A-Z_]+),</find>
-      <find>(Tipos\.[A-Z_]+), [^t]</find>
-      <find>desea g</find>
-      <find>BtnSTa</find>
-      <find>BtnSTable().setenabled(false</find>
-      <find>case &quot;(.)&quot;</find>
-      <find>val</find>
-      <find>md5(</find>
+      <find>undoma</find>
+      <find>undomana</find>
+      <find>semico</find>
+      <find>pErr</find>
+      <find>= r_</find>
+      <find>return</find>
+      <find>r_retorn</find>
+      <find>(cont</find>
+      <find>impre</find>
+      <find>new RegistroErr(240, reg.LINE, reg.NOMBRE)</find>
+      <find>.*(R_[A-Z]+).*</find>
+      <find>syn</find>
+      <find>syn()</find>
+      <find>getBtn[A-z]{3}\(\).setEn</find>
+      <find>btnState\([0-9]</find>
+      <find>getBtnAll</find>
+      <find>“</find>
+      <find>[“]</find>
+      <find>asign</find>
+      <find>expr_rel</find>
+      <find>case Tokens.T_INT_C</find>
+      <find>bool_const</find>
+      <find>T_TRUE</find>
+      <find>T_BOOL_CO</find>
+      <find>INT_CONS</find>
+      <find>todos</find>
+      <find>(cerca de la</find>
+      <find>funcs</find>
+      <find>na.hijos.get(0).ref</find>
+      <find>“|”</find>
     </findStrings>
     <replaceStrings>
       <replace>public static int $1 = $2;</replace>
@@ -128,7 +179,6 @@
       <replace>public static final int $1 = $3;</replace>
       <replace>case &quot;$2&quot;:\n</replace>
       <replace>public static final int $1 = $3;\n</replace>
-      <replace>&quot;$1&quot;,</replace>
       <replace>$1, Tipos.NONE)</replace>
       <replace>RegistroTS(</replace>
       <replace>meter(</replace>
@@ -137,7 +187,19 @@
       <replace>$1, tok.archivo.getNoLinea(),</replace>
       <replace>case '$1'</replace>
       <replace>Util.md5(</replace>
+      <replace>(Estructuras.cont</replace>
+      <replace>PilaErrores</replace>
+      <replace>new RegistroErr(240, reg.LINE, reg.NOMBRE, reg.TOKEN_ID)</replace>
+      <replace>&quot;$1&quot;,</replace>
+      <replace>(</replace>
+      <replace>tv</replace>
+      <replace>tf</replace>
+      <replace>&quot;</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\janoc\.m2\repository\com\fifesoft\rsyntaxtextarea\2.6.1\rsyntaxtextarea-2.6.1.jar</dir>
+      <dir>C:\Users\janoc\.m2\repository\com\fifesoft\rsyntaxtextarea\2.6.1\rsyntaxtextarea-2.6.1.jar!\org\fife</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -145,47 +207,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/analizadorlexico/AnalizadorLexico.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/itc/automatas2/lexico/misc/Tokens.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/misc/Tokens.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/misc/Error.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/misc/BaseErrores.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/misc/Error.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/estructuras/RegistroErr.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/automatas/AutomataToken.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/automatas/AutomataNumero.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/automatas/AutomataCadena.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/estructuras/PilaErrores.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/misc/BaseErrores.java" />
-        <option value="$PROJECT_DIR$/codigo.txt" />
-        <option value="$PROJECT_DIR$/code.txt" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/automatas/AutomataDecimal.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/automatas/AutomataIdentificador.java" />
-        <option value="$PROJECT_DIR$/caso3.e1" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/Main.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/Tipos.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/estructuras/TablaSimbolos.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/MainWindow.form" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/estructuras/Archivo.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/Tokens.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/automatas/AutomataReservadas.java" />
-        <option value="$PROJECT_DIR$/caso1.e1" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/view/TabDocument.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/Main.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/lib/TextLineNumber.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/model/ArchivoModel.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/controller/UIOutputStream.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/estructuras/RegistroTS.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/AnalizadorLexico.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/lib/MessageDigestor.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/lib/Util.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/controller/UIOutputStreamController.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/controller/UIErrorStreamController.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/lexico/Tokenizador.java" />
-        <option value="$PROJECT_DIR$/src/itc/automatas2/gui/controller/UIController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/Tokens.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/gui/lib/E1TokenMaker.flex" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/gui/lib/E1TokenMaker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/gui/view/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/gui/controller/UIOutputStreamController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/gui/controller/UIErrorStreamController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/TablaSimbolos.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/sintactico/SecuenciaIncorrectaException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/PilaErrores.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/sintactico/EstructuraNoReconocidaException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/misc/BaseErrores.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/AnalizadorLexico.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/RegistroErr.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/Tokenizador.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/NodoArbol.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/sintactico/ReglasProd.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/sintactico/Estructuras.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/sintactico/AnalizadorSintactico.java" />
+        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/ArbolSintactico.java" />
         <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/gui/controller/UIController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/itc/automatas2/gui/lib/Util.java" />
+        <option value="$PROJECT_DIR$/CasosA3/casos345.e1" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/lexico/Tipos.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/IdExistenteException.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/MalRetornoException.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/ParametrosIncorrectosException.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/VariableNoDeclaradaException.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/TipoIncorrectoException.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/lexico/AnalizadorLexico.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/sintactico/Estructuras.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/estructuras/RegistroTS.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/excepciones/SentenciaInesperadaException.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/excepciones/FuncionSinReturnException.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/excepciones/FuncionSinRetornoException.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/estructuras/PilaErrores.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/misc/BaseErrores.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/TablaVar.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/RegistroFunc.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/TablaFunc.java" />
+        <option value="$PROJECT_DIR$/CasosA4/casos12 - Copy.e1" />
+        <option value="$PROJECT_DIR$/CasosA4/casos12.e1" />
+        <option value="$PROJECT_DIR$/CasosA4/casos34 - Copy.e1" />
+        <option value="$PROJECT_DIR$/CasosA4/casos34.e1" />
+        <option value="$PROJECT_DIR$/CasosA4/casos567 - Copy.e1" />
+        <option value="$PROJECT_DIR$/CasosA4/casos567.e1" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/AnalizadorSemantico.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/semantico/ReglasSemanticas.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/gui/view/AboutDialog.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/gui/controller/UIController.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/estructuras/ArbolSintactico.java" />
+        <option value="$PROJECT_DIR$/src/java/itc/automatas2/sintactico/AnalizadorSintactico.java" />
       </list>
     </option>
   </component>
@@ -207,16 +279,22 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="AnalizadorLexico" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="CompiladorPrototipoE1" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="AnalizadorLexico" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="CompiladorPrototipoE1" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="AnalizadorLexico" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="CompiladorPrototipoE1" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="assembly" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="CompiladorPrototipoE1" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
         </path>
       </expand>
@@ -224,7 +302,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -235,6 +313,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,20 +330,12 @@
               <item name="CompiladorPrototipo" type="b2602c69:ProjectViewProjectNode" />
               <item name="CompiladorPrototipo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CompiladorPrototipo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CompiladorPrototipo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CompiladorPrototipo" type="b2602c69:ProjectViewProjectNode" />
               <item name="CompiladorPrototipo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="automatas2" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -272,16 +343,6 @@
               <item name="CompiladorPrototipo" type="b2602c69:ProjectViewProjectNode" />
               <item name="CompiladorPrototipo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="automatas2" type="462c0819:PsiDirectoryNode" />
-              <item name="estructuras" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CompiladorPrototipo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CompiladorPrototipo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="automatas2" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
@@ -290,18 +351,22 @@
               <item name="CompiladorPrototipo" type="b2602c69:ProjectViewProjectNode" />
               <item name="CompiladorPrototipo" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="automatas2" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CompiladorPrototipo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CompiladorPrototipo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,16 +377,25 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last.edited.regexp" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../NetBeansProjects/IA/SecuencialIndexado-Grafos" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="itc.automatas2.semantico.excepciones" />
+      <recent name="itc.automatas2.sintactico" />
       <recent name="itc.automatas2.gui.controller" />
       <recent name="itc.automatas2.lexico.automatas" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\janoc\Documents\Tecno\S8 ISC\LA2\CompiladorPrototipo\src" />
+      <recent name="C:\Users\janoc\Documents\Tecno\S8 ISC\LA2\CompiladorPrototipo" />
+      <recent name="C:\Users\janoc\Documents\Tecno\S8 ISC\LA2\CompiladorPrototipo\src\java" />
+      <recent name="C:\Users\janoc\Documents\Tecno\S8 ISC\LA2\CompiladorPrototipo\res" />
+      <recent name="C:\Users\janoc\Documents\Tecno\S8 ISC\LA2\CompiladorPrototipo\src\itc" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -414,28 +488,6 @@
     </configuration>
     <configuration name="AnalizadorLexico-1.0.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/AnalizadorLexico-1.0.jar" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -551,9 +603,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
-      <method />
-    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="myFilePath" />
@@ -622,22 +671,6 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
@@ -645,27 +678,6 @@
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
@@ -684,51 +696,41 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="AnalizadorLexico" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-      <method />
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
@@ -742,14 +744,6 @@
     </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
     </configuration>
     <list>
       <item itemvalue="Application.ui" />
@@ -787,11 +781,35 @@
       <workItem from="1523859530286" duration="4557000" />
       <workItem from="1523897893334" duration="9227000" />
       <workItem from="1523981431165" duration="3989000" />
+      <workItem from="1524139615901" duration="2917000" />
+      <workItem from="1524155189149" duration="3859000" />
+      <workItem from="1524183623605" duration="3621000" />
+      <workItem from="1524267994708" duration="9562000" />
+      <workItem from="1524338196739" duration="12562000" />
+      <workItem from="1524423955291" duration="20964000" />
+      <workItem from="1524579032993" duration="417000" />
+      <workItem from="1524582390785" duration="3164000" />
+      <workItem from="1524702772059" duration="4040000" />
+      <workItem from="1524757325047" duration="332000" />
+      <workItem from="1525364228107" duration="668000" />
+      <workItem from="1525645323322" duration="1270000" />
+      <workItem from="1525656420007" duration="727000" />
+      <workItem from="1526344738853" duration="2235000" />
+      <workItem from="1526524085087" duration="1246000" />
+      <workItem from="1526570860617" duration="1547000" />
+      <workItem from="1526615270758" duration="1941000" />
+      <workItem from="1526661123245" duration="672000" />
+      <workItem from="1526692791759" duration="11104000" />
+      <workItem from="1526751914608" duration="22065000" />
+      <workItem from="1526879914366" duration="854000" />
+      <workItem from="1527004908198" duration="776000" />
+      <workItem from="1527530658358" duration="5461000" />
+      <workItem from="1527554668390" duration="768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101033000" />
+    <option name="totallyTimeSpent" value="216403000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -808,57 +826,35 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3267974" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32412326" />
       <window_info anchor="right" id="Palette&#9;" order="10" />
-      <window_info id="Image Layers" order="7" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32995737" />
+      <window_info active="true" anchor="right" id="Maven Projects" order="4" visible="true" weight="0.18603411" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23747277" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32897604" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15884861" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3985122" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15520833" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3296875" />
-      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26688454" />
       <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info id="Designer" order="4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22228146" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="10" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3985122" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" x="961" y="31" width="958" height="1008" id="Debug" order="3" weight="0.32837406" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Properties" order="5" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="UI Designer" order="5" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36901122" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32943678" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info id="Designer" order="4" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3296875" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Properties" order="5" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24939074" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32731137" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -906,471 +902,330 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="51" />
+      <option name="time" value="131" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="reg" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/casos24.e1">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/lib/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="72" lean-forward="true" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
+        <state relative-caret-position="68">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/caso1.e1">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Runnable.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/javax/swing/undo/UndoManager.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fifesoft/rsyntaxtextarea/2.6.1/rsyntaxtextarea-2.6.1-sources.jar!/org/fife/ui/rtextarea/RUndoManager.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fifesoft/rsyntaxtextarea/2.6.1/rsyntaxtextarea-2.6.1-sources.jar!/org/fife/ui/rtextarea/RTextArea.java" />
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/SecuenciaIncorrectaException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/AnalizadorLexico.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/EstructuraNoReconocidaException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3808">
-          <caret line="238" column="49" selection-start-line="238" selection-start-column="49" selection-end-line="238" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#imprimirErrores#0;class#AnalizadorLexico#0" />
-            <element signature="method#imprimirSimbolos#0;class#AnalizadorLexico#0" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/itc/automatas2/Main.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/concurrent/locks/LockSupport.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/awt/EventDispatchThread.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/awt/event/InvocationEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/lexico/Tokenizador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="1425">
+          <caret line="121" column="34" selection-start-line="121" selection-start-column="34" selection-end-line="121" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/Tokens.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/controller/UIErrorStreamController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+        <state relative-caret-position="441">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/AnalizadorLexico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#imprimirErrores#0;class#AnalizadorLexico#0" />
-            <element signature="method#imprimirSimbolos#0;class#AnalizadorLexico#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/misc/Error.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Error.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/RegistroErr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/ArrayDeque.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="284" selection-start-line="284" selection-end-line="284" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/codigo.txt" />
-    <entry file="file://$PROJECT_DIR$/code.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/automatas/AutomataDecimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/automatas/AutomataCadena.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="21" column="20" lean-forward="true" selection-end-line="46" />
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/automatas/AutomataToken.java">
+    <entry file="file://$PROJECT_DIR$/CasosA3/casos345.e1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+        <state relative-caret-position="127">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/automatas/AutomataNumero.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/lib/E1TokenMaker.flex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/lexico/Tipos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/lexico/Tokens.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/RegistroErr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/lexico/AnalizadorLexico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="358" column="5" selection-start-line="358" selection-start-column="5" selection-end-line="358" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/ReglasProd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/NodoArbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/RegistroTS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="" y="">itc.automatas2.lexico.AnalizadorLexico</node>
-            <node x="" y="">itc.automatas2.estructuras.PilaErrores</node>
-            <node x="" y="">itc.automatas2.lexico.Tokenizador</node>
-            <node x="" y="">itc.automatas2.misc.Error</node>
-            <node x="" y="">itc.automatas2.misc.BaseErrores</node>
-            <node x="" y="">itc.automatas2.Main</node>
-            <node x="" y="">itc.automatas2.estructuras.Archivo</node>
-            <node x="" y="">itc.automatas2.lexico.automatas</node>
-            <node x="" y="">itc.automatas2.lexico.Tokens</node>
-            <node x="" y="">itc.automatas2.estructuras.RegistroTS</node>
-            <node x="" y="">itc.automatas2.estructuras.TablaSimbolos</node>
-            <node x="" y="">itc.automatas2.estructuras.RegistroErr</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="3778.0" y="1997.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>Project Files</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/itc.automatas2">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>itc.automatas2</OriginalElement>
-          <nodes>
-            <node x="490.0" y="79.0">itc.automatas2.lexico.automatas.AutomataIdentificador</node>
-            <node x="249.75" y="0.0">itc.automatas2.lexico.automatas.AutomataToken</node>
-            <node x="0.0" y="301.0">itc.automatas2.estructuras.RegistroErr</node>
-            <node x="165.00000000000003" y="79.0">itc.automatas2.lexico.automatas.AutomataCadena</node>
-            <node x="148.0" y="375.0">itc.automatas2.estructuras.Archivo</node>
-            <node x="0.0" y="227.0">itc.automatas2.lexico.Tokenizador</node>
-            <node x="158.0" y="227.0">itc.automatas2.misc.BaseErrores</node>
-            <node x="326.0" y="79.0">itc.automatas2.lexico.automatas.AutomataDecimal</node>
-            <node x="182.0" y="153.0">itc.automatas2.estructuras.TablaSimbolos</node>
-            <node x="120.0" y="449.0">itc.automatas2.misc.Error</node>
-            <node x="0.0" y="375.0">itc.automatas2.estructuras.PilaErrores</node>
-            <node x="150.0" y="301.0">itc.automatas2.estructuras.RegistroTS</node>
-            <node x="0.0" y="79.0">itc.automatas2.lexico.automatas.AutomataNumero</node>
-            <node x="282.0" y="375.0">itc.automatas2.lexico.Tokens</node>
-            <node x="0.0" y="153.0">itc.automatas2.lexico.AnalizadorLexico</node>
-            <node x="0.0" y="449.0">itc.automatas2.Main</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="itc.automatas2.lexico.automatas.AutomataNumero" target="itc.automatas2.lexico.automatas.AutomataToken">
-              <point x="0.0" y="-14.5" />
-              <point x="72.5" y="49.0" />
-              <point x="266.5" y="49.0" />
-              <point x="-50.25" y="14.5" />
-            </edge>
-            <edge source="itc.automatas2.lexico.automatas.AutomataCadena" target="itc.automatas2.lexico.automatas.AutomataToken">
-              <point x="-2.8421709430404007E-14" y="-14.5" />
-              <point x="235.5" y="59.0" />
-              <point x="300.0" y="59.0" />
-              <point x="-16.75" y="14.5" />
-            </edge>
-            <edge source="itc.automatas2.lexico.automatas.AutomataDecimal" target="itc.automatas2.lexico.automatas.AutomataToken">
-              <point x="0.0" y="-14.5" />
-              <point x="398.0" y="59.0" />
-              <point x="333.5" y="59.0" />
-              <point x="16.75" y="14.5" />
-            </edge>
-            <edge source="itc.automatas2.lexico.automatas.AutomataIdentificador" target="itc.automatas2.lexico.automatas.AutomataToken">
-              <point x="0.0" y="-14.5" />
-              <point x="574.0" y="49.0" />
-              <point x="367.0" y="49.0" />
-              <point x="50.25" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-151.0" y="32.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>Project Files</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/automatas/AutomataIdentificador.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/TablaSimbolos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        <state relative-caret-position="192">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/casos24.e1">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/excepciones/FuncionSinRetornoException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
+        <state relative-caret-position="80">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/Tipos.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/excepciones/VariableNoDeclaradaException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        <state relative-caret-position="32">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/caso3.e1">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/excepciones/TipoIncorrectoException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+        <state relative-caret-position="32">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/itc/automatas2/gui/MainWindow.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/Tokens.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/excepciones/ParametrosIncorrectosException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="32">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/automatas/AutomataReservadas.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/excepciones/MalRetornoException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8128">
-          <caret line="498" column="31" selection-start-line="498" selection-start-column="31" selection-end-line="498" selection-end-column="31" />
-          <folding>
-            <element signature="e#253#254#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="32">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/caso1.e1">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/excepciones/IdExistenteException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/misc/BaseErrores.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
-          <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+          <caret line="34" column="66" selection-start-line="34" selection-start-column="66" selection-end-line="34" selection-end-column="66" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/itc/automatas2/gui/view/TabDocument.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/TablaVar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/PilaErrores.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/RegistroFunc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="256">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/misc/BaseErrores.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/TablaFunc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="61" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+        <state relative-caret-position="255">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/Main.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/jre/lib/rt.jar!/sun/misc/Unsafe.class" />
+    <entry file="file://$PROJECT_DIR$/CasosA4/casos12.e1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
+        <state relative-caret-position="128">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/lib/TextLineNumber.java">
+    <entry file="file://$PROJECT_DIR$/CasosA4/casos12 - Copy.e1" />
+    <entry file="file://$PROJECT_DIR$/CasosA4/casos34 - Copy.e1" />
+    <entry file="file://$PROJECT_DIR$/CasosA4/casos34.e1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="224" column="32" lean-forward="true" selection-start-line="224" selection-start-column="32" selection-end-line="224" selection-end-column="32" />
+        <state relative-caret-position="144">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/itc/automatas2/Main.java">
+    <entry file="file://$PROJECT_DIR$/CasosA4/casos567.e1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="224">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/view/MainFrame.java">
+    <entry file="file://$PROJECT_DIR$/CasosA4/casos567 - Copy.e1" />
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/PilaErrores.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816">
-          <caret line="111" column="38" lean-forward="true" selection-start-line="111" selection-start-column="38" selection-end-line="111" selection-end-column="38" />
+        <state relative-caret-position="767">
+          <caret line="79" column="27" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/RegistroTS.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/Estructuras.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="621">
+          <caret line="761" column="108" selection-start-line="761" selection-start-column="108" selection-end-line="761" selection-end-column="108" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/itc/automatas2/gui/view/STableView1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/res/about.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/controller/UIOutputStreamController.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/view/AboutDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/controller/UIErrorStreamController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fifesoft/rsyntaxtextarea/2.6.1/rsyntaxtextarea-2.6.1.jar!/org/fife/io/DocumentReader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fifesoft/rsyntaxtextarea/2.6.1/rsyntaxtextarea-2.6.1-sources.jar!/org/fife/io/DocumentReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fifesoft/rsyntaxtextarea/2.6.1/rsyntaxtextarea-2.6.1.jar!/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/itc/automatas2/gui/Main.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#727#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/AnalizadorLexico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#imprimirErrores#0;class#AnalizadorLexico#0" />
-            <element signature="method#imprimirSimbolos#0;class#AnalizadorLexico#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/lexico/Tokenizador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1505">
-          <caret line="252" column="44" selection-start-line="252" selection-start-column="44" selection-end-line="252" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/model/ArchivoModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="1037">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="600">
+          <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/Archivo.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/ReglasSemanticas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+        <state relative-caret-position="1139">
+          <caret line="395" column="11" selection-start-line="395" selection-start-column="11" selection-end-line="395" selection-end-column="11" />
           <folding>
-            <element signature="e#1586#1587#0" expanded="true" />
-            <element signature="e#1613#1614#0" expanded="true" />
+            <element signature="docComment;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_func#0;class#ReglasSemanticas#0" />
+            <element signature="method#r_func#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_asig#0;class#ReglasSemanticas#0" />
+            <element signature="method#r_asig#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_llamada#0;class#ReglasSemanticas#0" />
+            <element signature="method#r_llamada#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_for#0;class#ReglasSemanticas#0" />
+            <element signature="method#r_for#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_while#0;class#ReglasSemanticas#0" />
+            <element signature="method#r_while#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_leer_imp#0;class#ReglasSemanticas#0" />
+            <element signature="method#r_leer_imp#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_if#0;class#ReglasSemanticas#0" />
+            <element signature="method#r_if#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_exp#0;class#ReglasSemanticas#0" />
+            <element signature="method#r_exp#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_retorno#0;class#ReglasSemanticas#0" />
+            <element signature="method#r_retorno#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#r_bloque#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#variableDeclarada#0;class#ReglasSemanticas#0" />
+            <element signature="method#variableDeclarada#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#getTipo#0;class#ReglasSemanticas#0" />
+            <element signature="method#getTipo#0;class#ReglasSemanticas#0" />
+            <element signature="docComment;method#esReservadaTipo#0;class#ReglasSemanticas#0" />
+            <element signature="method#esReservadaTipo#0;class#ReglasSemanticas#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/estructuras/TablaSimbolos.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/semantico/AnalizadorSemantico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
-          <folding>
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#2044#2045#0" expanded="true" />
-            <element signature="e#2137#2138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/lib/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+        <state relative-caret-position="714">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/controller/UIController.java">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/gui/controller/UIController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="249" column="31" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initListeners#0;class#UIController#0" />
-            <element signature="class#2311:3166" />
-            <element signature="e#7143#7144#0" expanded="true" />
-            <element signature="e#7210#7211#0" expanded="true" />
-            <element signature="e#8536#8537#0" expanded="true" />
-            <element signature="e#8594#8595#0" expanded="true" />
-            <element signature="e#8620#8621#0" expanded="true" />
-            <element signature="e#8678#8679#0" expanded="true" />
-            <element signature="e#9608#9609#0" expanded="true" />
-            <element signature="e#9666#9667#0" expanded="true" />
-            <element signature="e#9715#9716#0" expanded="true" />
-            <element signature="e#9787#9788#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="5610">
+          <caret line="356" column="23" selection-start-line="356" selection-start-column="23" selection-end-line="356" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/itc/automatas2/gui/view/MainFrame.form">
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/estructuras/ArbolSintactico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5355" />
+        <state relative-caret-position="511">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
       </provider>
-      <provider editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/itc/automatas2/sintactico/AnalizadorSintactico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

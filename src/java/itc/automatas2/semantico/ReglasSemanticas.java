@@ -401,7 +401,7 @@ class ReglasSemanticas {
                 }
             }
         }
-        if (!returnFound && ctx != null) {
+        if (!returnFound && ctx != null && tf.get(ctx.contexto).T_RETURN != Tipos.VOID) {
             throw new FuncionSinRetornoException(
                     String.format("La función \"%s\" retorna un tipo %s, sin embargo no se encontró la sentencia RETURN en su declaración.",
                             ctx.contexto, Tipos.nombres[tf.get(ctx.contexto).T_RETURN])

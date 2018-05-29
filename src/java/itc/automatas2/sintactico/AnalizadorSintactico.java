@@ -1,6 +1,9 @@
 package itc.automatas2.sintactico;
 
 import itc.automatas2.estructuras.*;
+import itc.automatas2.lexico.Tokens;
+import itc.automatas2.misc.BaseErrores;
+import itc.automatas2.misc.Error;
 
 import java.util.ArrayList;
 
@@ -29,6 +32,11 @@ public class AnalizadorSintactico {
                     case ReglasProd.R_METODO:
                         arboles.add(
                                 Estructuras.r_metodo(Estructuras.cont, ts)
+                        );
+                        break;
+                    case ReglasProd.R_RETORNO:
+                        arboles.add(
+                                Estructuras.r_retorno(Estructuras.cont, ts)
                         );
                         break;
                     case ReglasProd.R_IF:
@@ -61,11 +69,7 @@ public class AnalizadorSintactico {
                                 Estructuras.r_asignacion(Estructuras.cont, ts)
                         );
                         break;
-                    case ReglasProd.R_RETORNO:
-                        RegistroTS reg = ts.get(Estructuras.cont);
-                        PilaErrores.meter(new RegistroErr(240, reg.LINE, reg.NOMBRE, reg.TOKEN_ID));
-                        arboles = null;
-                        return false;
+
                 }
             } while (Estructuras.cont < ts.size());
         } catch (EstructuraNoReconocidaException | SecuenciaIncorrectaException e) {
@@ -84,10 +88,11 @@ public class AnalizadorSintactico {
      */
     public void imprimirArboles() {
         if (arboles != null)
-            for (ArbolSintactico arbol : arboles) {
-                System.out.println(arbol.toString());
-                System.out.println();
-            }
+            System.out.println("\\");
+        for (ArbolSintactico arbol : arboles) {
+            String tmp = arbol.toString();
+            System.out.println(tmp.substring(0, tmp.length() - 1));
+        }
     }
 
     public boolean tieneArboles() {
